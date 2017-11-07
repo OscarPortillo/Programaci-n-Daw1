@@ -1,0 +1,35 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		/*
+		 * Hacer un programa para que pida una palabra de no más de 20 caracteres y efectúe todas
+		las rotaciones posibles de dicha palabra de forma que el último carácter pase al primero y
+		los demás corran un espacio, es decir si la palabra fuera “HOLA” el resultado debe ser :
+		HOLA
+		AHOL
+		LAHO
+		OLAH
+		 */
+		final int max=80;
+		String palabra;
+		String palabraInvertida;
+		int numLetras;
+		System.out.println("Introduce una palabra");
+		palabra=teclado.nextLine();
+		numLetras=palabra.length();
+		while (palabra.length()>max){
+			System.out.println("Introduce una palabra");
+			palabra=teclado.nextLine();
+			numLetras=palabra.length();
+			
+		}//while
+		for(int k=0;k<numLetras;k++){
+			System.out.println(palabra);
+			palabraInvertida=palabra.substring(numLetras-1);
+			palabra=palabraInvertida+palabra.substring(0,numLetras-1);
+		}
+	}//main
+
+}//class

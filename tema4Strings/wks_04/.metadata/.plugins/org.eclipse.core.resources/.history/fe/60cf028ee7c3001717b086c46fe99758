@@ -1,0 +1,11 @@
+import java.util.*;
+public class Skraaaa {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Random azar=new Random ();
+		int num=azar.nextInt(5)+1;
+		System.out.println(num);
+	}
+
+}

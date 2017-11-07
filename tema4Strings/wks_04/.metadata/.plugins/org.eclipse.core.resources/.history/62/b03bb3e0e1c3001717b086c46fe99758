@@ -1,0 +1,13 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner (System.in);
+		/*
+		 * Escribir un programa que pida por teclado una cadena y una letra, de manera que
+			ponga en mayúsculas cada ocurrencia de la letra que haya en la cadena y lo
+			muestre por pantalla.
+		 */
+	}//main
+
+}//class

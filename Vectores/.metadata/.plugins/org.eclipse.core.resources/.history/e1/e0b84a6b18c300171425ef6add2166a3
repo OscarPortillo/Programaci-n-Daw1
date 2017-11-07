@@ -1,0 +1,8 @@
+
+public class nombre {
+
+	public void nombre(){
+		System.out.println("el nombre es: Javi");
+		System.out.println("La edad es: 26");
+	}
+}

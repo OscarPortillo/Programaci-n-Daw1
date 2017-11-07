@@ -1,0 +1,19 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		int edad;
+		String nombre;
+		
+		System.out.println("Introduce un nombre");
+		nombre=teclado.nextLine();
+		System.out.println("Introduce una edad");
+		edad=teclado.nextInt();
+
+		
+		System.out.println("La persona se llama " + nombre + " y su edad es " +edad); 
+		
+	}
+
+}

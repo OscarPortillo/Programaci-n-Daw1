@@ -1,0 +1,59 @@
+
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner teclado=new Scanner(System.in);
+		/*
+		 * Escribir un programa que lea una frase (máximo 60 caracteres) y diga cuántas letras
+			distintas tiene y la frecuencia de las mismas, para homogeneizar el conjunto de letras
+			debemos trabajar solo con mayúsculas.*/
+		 
+		String frase;
+		final int max=60;
+		int numLetras;
+		@SuppressWarnings("unused")
+		int letraIgual,letraDistinta;
+		boolean correcto;
+		int k,i;
+		char letraAbc;
+		char letrafrase;
+		String fraseMayus;
+		@SuppressWarnings("unused")
+		String abc="ABCDEFGHIJKLMNÑOPQRSTUWXYZ";
+		
+		System.out.println("Introduce una frase");
+		frase=teclado.nextLine();
+		numLetras=frase.length();
+		fraseMayus=frase.toUpperCase();
+		letraIgual=0;
+		letraDistinta=0;
+		
+		while(numLetras>max){
+			System.out.println("Introduce una frase");
+			frase=teclado.nextLine();
+			numLetras=frase.length();
+			fraseMayus=frase.toUpperCase();
+		}//si es mas de 60 lo vuelve a pedir
+		
+		for(k=0;k<26;k++){
+			letraAbc=abc.charAt(k);
+			correcto=false;
+			letraIgual=0;
+			for(i=0;i<numLetras;i++){
+				letrafrase=fraseMayus.charAt(i);
+				if(letrafrase==letraAbc && correcto==false){
+					correcto=true;
+					letraDistinta++;
+				}//primer if
+				if(letrafrase==letraAbc){
+					letraIgual++;
+				}//segundo if
+			}//for interno
+			System.out.println("la letra "+letraAbc+" se repite "+letraIgual);
+		}//for externo
+		System.out.println("Hay "+letraDistinta+" letras distintas.");
+	}//main
+
+}//class

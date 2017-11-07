@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class principal {
+
+	public static void main(String[] args) {
+		/*Leer una cadena de hasta 80 caracteres y pasarla en función de una variable de opción a
+		mayúsculas ó a minúsculas e imprimir la cadena resultante*/
+		Scanner teclado=new Scanner(System.in);
+		String frase,palabra;
+		System.out.println("Introduce una frase");
+		frase = teclado.nextLine();
+
+	}
+
+}

@@ -1,0 +1,14 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		
+		String nom1,nom2,ape1,ape2;
+		System.out.println("Introduce un nombre");
+		System.out.println("Introduce un apellido");
+		System.out.println("Introduce un nombre");
+		System.out.println("Introduce un apellido");
+	}
+
+}
