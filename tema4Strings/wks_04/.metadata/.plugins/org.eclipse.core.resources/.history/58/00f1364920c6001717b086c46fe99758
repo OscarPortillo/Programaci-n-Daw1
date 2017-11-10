@@ -1,0 +1,13 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		String nombre = "";
+		Leer leer=new Leer();
+		 System.out.println("Nombre?");
+		 nombre=teclado.nextLine();
+		 leer.setNombre(nombre);
+		 System.out.println(nombre);
+	}
+}

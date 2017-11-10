@@ -1,8 +1,10 @@
 INDEX VERSION 1.130+C:\Programación\tema4Strings\wks_04\.metadata\.plugins\org.eclipse.jdt.core
+4071354671.index
 1309090975.index
 1409664330.index
 35009478.index
 587396572.index
+2564010650.index
 2680059523.index
 4023681548.index
 112666425.index
@@ -12,4 +14,5 @@ INDEX VERSION 1.130+C:\Programación\tema4Strings\wks_04\.metadata\.plugins\org.e
 1964049232.index
 1907365807.index
 2460560983.index
+1016391987.index
 195067885.index
