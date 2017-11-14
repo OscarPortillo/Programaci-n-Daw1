@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		Scanner teclado = new Scanner (System.in);
+		int numero;
+		String caracter;
+		boolean correcto=false;
+		char letra=' ';
+		while(!correcto){
+			System.out.println("Introduce un numero máximo 7 caracteres: ");
+			numero=teclado.nextInt();
+			
+			if(numero<1 && numero>99999999){
+				correcto=false;
+			}else{
+				System.out.println("Introduce una letra");
+				caracter=teclado.nextLine();//.charAt(0);
+				
+			}
+		}//while
+		
+	}//main
+
+}//class

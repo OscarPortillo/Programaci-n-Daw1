@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		@SuppressWarnings("resource")
+		Scanner teclado = new Scanner (System.in);
+		int numero;
+		@SuppressWarnings("unused")
+		String caracter;
+		boolean correcto=false;
+		@SuppressWarnings("unused")
+		char letra=' ';
+		String letras="TRWAGMYFPDXBNJZSQVHLCKE";
+		
+		while(!correcto){
+			System.out.println("Introduce un numero máximo 7 caracteres: ");
+			numero=teclado.nextInt();
+			
+			if(numero<1 && numero>99999999){
+				correcto=false;
+			}else{
+				System.out.println("Introduce una letra");
+				caracter=teclado.nextLine().toUpperCase();//.charAt(0);
+				letra=caracter.charAt(0);
+				
+				if(letra==letras.charAt(numero % 23)){
+					correcto=true;
+				}else{
+					correcto=false;
+				}
+			}
+			if(!correcto){
+				System.out.println("Error: "+numero+letra+" DNI invalido");
+			}else{
+				System.out.println("DNI Correcto"+numero+letra);
+			}
+		}//while
+		
+	}//main
+
+}//class

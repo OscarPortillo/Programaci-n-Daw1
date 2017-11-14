@@ -1,0 +1,25 @@
+import java.util.*;
+public class PruebaMatriz3x3{
+	public static void main(String[] args) {
+		int i;
+		int j;
+		int matriz[][]=new int[3][3];//generar una matriz 3 x 3
+
+		Scanner teclado = new Scanner (System.in);
+		Random azar=new Random();
+		
+		for(i = 0; i < 3; i++){
+			for(j = 0; j < 3; j++){
+				System.out.println("Introduciendo valor "+i+" , "+j+" :");
+				matriz[i][j] = azar.nextInt(20)+5;
+			}//for interno
+		}//for externo
+		System.out.println("Matriz 3 x 3");
+		for(i = 0; i < 3 ; i++){
+			for(j = 0; j<3 ;j++){
+				System.out.print(matriz[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+}

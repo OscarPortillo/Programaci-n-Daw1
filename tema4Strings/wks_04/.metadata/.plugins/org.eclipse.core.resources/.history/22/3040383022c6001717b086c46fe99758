@@ -1,0 +1,18 @@
+import java.util.*;
+public class Ejer33 {
+
+	public static void main(String[] args) {
+		String vecNombres [] = {"Ana", "Jose", "Rafa", "Luis", "Adela", "Raul", "German",
+				"Eric", "Agustin", "Antonio", "Carla", "Jaime", "Diego", "Jesus", "Abel", "David",
+				"Pilar", "Carmen", "Teresa", "Lolo", "Perico"};
+		String arrayNombres [] = new String [20];
+		int indice , indiceazar;
+		indice = 0;
+		
+		for( ; indice < 20 ; indice++){
+			
+		}
+
+	}//main
+
+}//class
