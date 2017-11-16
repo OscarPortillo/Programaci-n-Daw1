@@ -1,0 +1,24 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Ejer42 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner (System.in);
+		Random azar=new Random();
+		 String vecEmple[]={"Emple 1","Emple 2","Emple 3"};
+		String meses[]={"enero","Febrero","Marzo","Abril","Mayo","Junio",
+				"Julio","Agosto","Septiembre","Octubre","Noviembre","Dciembre"};
+		String vecVenta[][][]= new String[3][12][4];
+		int k,i,j;
+		for(k=0;k<3;k++){
+			for(i=0;i<4;i++){
+				for(j=0;j<5;j++){
+					 
+				}//tercer for
+			}//segundo for
+		}//primer for
+		
+	}//main
+
+}//class

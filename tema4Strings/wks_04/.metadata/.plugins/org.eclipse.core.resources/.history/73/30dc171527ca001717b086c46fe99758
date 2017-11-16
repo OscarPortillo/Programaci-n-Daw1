@@ -1,0 +1,21 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		 Scanner teclado=new Scanner (System.in);
+		 int numero;
+		 String numeroString;
+		 boolean correcto=false;
+		 
+		 while(!correcto){
+			 do{
+				 System.out.println("Introduce un numero");
+				 numero=teclado.nextInt();
+				 numeroString=Integer.toString(numero);
+			 }while(numeroString.length()<8 || numeroString.length()>8);//mientras que sea menor o mayor que 8 lo vuelvo a pedir 
+			 
+			 
+		 }//while correcto
+	}//mian
+
+}//class

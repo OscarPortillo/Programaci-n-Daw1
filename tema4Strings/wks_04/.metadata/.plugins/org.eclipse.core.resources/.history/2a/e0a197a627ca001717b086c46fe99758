@@ -1,0 +1,40 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		 @SuppressWarnings("resource")
+		Scanner teclado=new Scanner (System.in);
+		 int numero;
+		 String numeroString,letraDni;
+		 @SuppressWarnings("unused")
+		String letrasDisponibles="TRWAGMYFPDXBNJZSQVHLCKE";
+		 boolean correcto=false;
+		 char letra=' ';
+		 
+		 while(!correcto){
+			 do{
+				 System.out.println("Introduce un numero");
+				 numero=teclado.nextInt();
+				 numeroString=Integer.toString(numero);
+			 }while(numeroString.length()<8 || numeroString.length()>8);//mientras que sea menor o mayor que 8 lo vuelvo a pedir 
+			 if(numero<1 && numero>99999999 ){
+				 correcto=false;
+			 }else{
+				 System.out.println("Introduce la letra del DNI");
+				 letraDni=teclado.nextLine().toUpperCase();
+				 letra=letraDni.charAt(0);
+				 if(letra==letrasDisponibles.charAt(numero % 23)){
+					 correcto=true;
+				 }
+				 
+			 }
+			 if(!correcto){
+				 System.out.println("Dni incorrecto  "+numero+letra);
+			 }else{
+				 System.out.println("Dni valido  "+numero+letra);
+			 }
+			 
+		 }//while correcto
+	}//mian
+
+}//class

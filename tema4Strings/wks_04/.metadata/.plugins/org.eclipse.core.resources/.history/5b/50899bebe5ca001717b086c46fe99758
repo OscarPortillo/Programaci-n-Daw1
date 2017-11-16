@@ -1,0 +1,10 @@
+import java.util.*;
+public class Ejer37 {
+
+	public static void main(String[] args) {
+		@SuppressWarnings({ "unused", "resource" })
+		Scanner teclado=new Scanner(System.in);
+		
+	}//main
+
+}//class

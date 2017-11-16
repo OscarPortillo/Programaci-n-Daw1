@@ -23,7 +23,7 @@ public class Ejer33 {
 		int j;
 		j=1;
 		for(String nombre:arrayNombres){
-			System.out.print(j+++" - "+" "+nombre);
+			System.out.print(j+++" - "+" "+nombre+" ");
 		}
 		
 		/*for( ; indice < 20 ; indice++){
