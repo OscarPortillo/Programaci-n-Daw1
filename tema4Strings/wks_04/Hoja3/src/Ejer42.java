@@ -27,7 +27,7 @@ public class Ejer42 {
 
 			for(i=0;i<12;i++){
 				for(j=0;j<4;j++){
-					vecVenta[k][i][j]=vecEmple[azar.nextInt(3)]+meses[azar.nextInt(12)]+productos[azar.nextInt(4)];
+					vecVenta[k][i][j]=vecEmple[azar.nextInt(3)]+" "+meses[azar.nextInt(12)]+" "+productos[azar.nextInt(4)];
 				}//tercer for
 			}//segundo for
 		}//primer for
@@ -37,7 +37,7 @@ cont=0;
 
 			for(i=0;i<12;i++){
 				for(j=0;j<4;j++){
-					System.out.print(vecVenta[k][i][j]=vecEmple[azar.nextInt(3)]+" "+meses[azar.nextInt(12)]+" "+productos[azar.nextInt(4)]+" ");
+					System.out.print(vecVenta[k][i][j]+" ");
 				}//tercer for
 				System.out.println();
 			}//segundo for
