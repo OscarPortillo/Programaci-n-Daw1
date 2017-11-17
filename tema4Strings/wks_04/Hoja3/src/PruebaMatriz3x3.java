@@ -5,6 +5,7 @@ public class PruebaMatriz3x3{
 		int j;
 		int matriz[][]=new int[3][3];//generar una matriz 3 x 3
 
+		@SuppressWarnings({ "unused", "resource" })
 		Scanner teclado = new Scanner (System.in);
 		Random azar=new Random();
 		

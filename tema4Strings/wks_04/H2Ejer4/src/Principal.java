@@ -2,9 +2,11 @@ import java.util.*;
 public class Principal {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner teclado=new Scanner(System.in);
 		
 		String nom1,nom2,ape1,ape2;
+		@SuppressWarnings("unused")
 		String n1,a1,n2,a2;
 		System.out.println("Introduce un nombre");
 		nom1=teclado.nextLine();

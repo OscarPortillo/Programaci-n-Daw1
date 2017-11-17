@@ -1,0 +1,71 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		/*Escribir un programa que lea códigos de personas de 8 caracteres de modo que los cuatro
+		primeros sean numéricos y contenidos entre 1990-1995 (un año), el quinto carácter sea solo
+		(H ó M) sexo, el sexto un numero que representa el curso 1 ó 2 y los caracteres séptimo y
+		octavo pueden tener cualquier valor. Deben rechazarse los códigos que no cumplan estas
+		Ejercicios de cadenas
+		Pagina 2 de 2
+		condiciones, la finalización de entrada de códigos se produce cuando se introduce el código
+		“00000000”. Al final el programa debe sacar un informe indicando cuántos hombres y
+		mujeres hay matriculados en primero y segundo y cuántos códigos correctos han sido
+		leídos.*/
+		String codigo,codAux = null;
+		final int max=8;
+		char sexto;
+		char quinto;
+		int año;
+		boolean correcto=false;
+		año=0;
+		System.out.println("PARA INTRODUCIR EL CÓDIGO DEBES CUMPLIR LOS SIGUIENTES REQUISITOS: ");
+		System.out.println("\t Los primeros 4 caracteres serán numeros");
+		System.out.println("\t El quinto una H ó M");
+		System.out.println("\t El sexto 1 ó 2");
+		System.out.println("\t el séptimo y octavo cualquier valor");
+
+		System.out.println("INTRODUCE UN CÓDIGO");
+		codigo=teclado.nextLine();
+		while(!codigo.equals("00000000")&& codigo.length()==8){
+			año=Integer.parseInt(codigo.substring(0,4));
+			quinto=codigo.charAt(4);
+			sexto=codigo.charAt(5);
+			 
+			if(año >= 1990 && año <= 1995){
+				 
+				correcto=true;
+			}else{
+				System.out.println("debes introducir un numero entre 1990 y 1995");
+				correcto=false;
+			}
+
+			if(correcto==true && quinto=='H' || quinto=='M'){//comparo el 5 caracter
+				System.out.println(codigo.substring(4,4));
+				correcto=true;
+			}else{
+				System.out.println("el 5 caracter debe ser H ó M");
+				correcto=false;
+			}
+			if(correcto==true && sexto=='1' || sexto=='2'){//comparo el 6 caracter
+				System.out.println(codigo.substring(5,5));
+			}else{
+				System.out.println("el 6 caracter debe ser 1 ó 2");
+				correcto=false;
+			}
+			if(correcto==true){
+				codAux+=codigo;
+			}//if
+			System.out.println("INTRODUCE UN CÓDIGO");
+			codigo=teclado.nextLine();
+			
+
+		}//while
+		if(correcto==true){
+			System.out.println(codAux);
+		}
+
+	}//main
+
+}//class

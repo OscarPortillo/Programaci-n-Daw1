@@ -3,6 +3,7 @@ public class Ejer34 {
 
 	public static void main(String[] args) {
 		Random azar=new Random();
+		@SuppressWarnings("unused")
 		int notasAzar;
 		int notas[]=new int [10];
 		 int suma,media;

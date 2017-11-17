@@ -6,6 +6,7 @@ public class Ejer33 {
 				"Eric", "Agustin", "Antonio", "Carla", "Jaime", "Diego", "Jesus", "Abel", "David",
 				"Pilar", "Carmen", "Teresa", "Lolo", "Perico"};
 		String arrayNombres [] = new String [20];
+		@SuppressWarnings("unused")
 		int indice , indiceAzar;
 		indice = 0;
 		Random azar=new Random();

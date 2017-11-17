@@ -2,6 +2,7 @@ import java.util.*;
 public class Principal {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner teclado=new Scanner(System.in);
 		/*
 		 * Hacer un programa para que pida una palabra de no más de 20 caracteres y efectúe todas

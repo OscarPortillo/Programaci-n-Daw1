@@ -1,4 +1,5 @@
 import java.util.Random;
+
 import java.util.Scanner;
 
 public class Ejer41 {
@@ -17,10 +18,12 @@ public class Ejer41 {
 			}//segundo for
 		}//primer for
 		
+		@SuppressWarnings("unused")
 		double suma;
+		suma=0;
 		for(k=0;k<5;k++){//centro
 			for(i=0;i<10;i++){//curso
-				suma=suma+tabla[k][i]=0;
+				 //suma[k][i]=0;
 				for(j=0;j<20;j++){//alumno
 					System.out.print(tabla[k][i][j] +"  ");
 				}//tercer for

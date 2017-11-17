@@ -4,7 +4,9 @@ import java.util.Scanner;
 public class Ejer40 {
 
 	public static void main(String[] args) {
+		@SuppressWarnings({ "unused", "resource" })
 		Scanner teclado = new Scanner (System.in);
+		@SuppressWarnings("unused")
 		Random azar=new Random();
 		int num=1;
 		int matriz[][][]= new int[3][4][5]	;

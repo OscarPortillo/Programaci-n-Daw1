@@ -6,6 +6,7 @@ public class principal {
 		/* 2. Dada una frase de no más de 80 caracteres hacer un programa que busque cuántas
 		 * 
 		mayúsculas y minúsculas tiene y lo imprima*/
+		@SuppressWarnings("resource")
 		Scanner teclado=new Scanner(System.in);
 		
 		final int max_long=80;

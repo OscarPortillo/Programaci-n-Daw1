@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class Ejer42 {
 
@@ -13,6 +12,7 @@ public class Ejer42 {
 		 */
 		//Scanner teclado = new Scanner (System.in);
 		Random azar=new Random();
+		@SuppressWarnings("unused")
 		int num;
 		String vecEmple[]={"Emple 1 ","Emple 2","Emple 3"};
 
@@ -31,8 +31,9 @@ public class Ejer42 {
 				}//tercer for
 			}//segundo for
 		}//primer for
-int cont;
-cont=0;
+		@SuppressWarnings("unused")
+		int cont;
+		cont=0;
 		for(k=0;k<3;k++){
 
 			for(i=0;i<12;i++){

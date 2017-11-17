@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class Principal {
 
 	public static void main(String[] args) {
-		@SuppressWarnings({ "unused", "resource" })
+		@SuppressWarnings({ "resource" })
 		Scanner teclado=new Scanner(System.in);
 		String palabra;
+		@SuppressWarnings("unused")
 		char primero;
+		@SuppressWarnings("unused")
 		char ultimo;
 		System.out.println("Introduce una palabra");
 		palabra=teclado.nextLine();

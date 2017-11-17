@@ -7,6 +7,7 @@ public class principal {
 
 		/*	Programa que lea una frase y una palabra y que nos diga la posición de dicha palabra en la
 		frase o un mensaje indicando que no está.*/
+		@SuppressWarnings("resource")
 		Scanner teclado=new Scanner(System.in);
 
 		String frase,palabra;

@@ -2,9 +2,8 @@ import java.util.*;
 public class Ejer38 {
 
 	public static void main(String[] args) {
-		@SuppressWarnings("unused")
+		@SuppressWarnings({ "unused", "resource" })
 		Scanner teclado = new Scanner (System.in);
-		@SuppressWarnings("unused")
 		Random azar=new Random();
 		/*
 		 * 38.-Cargar en una matriz las notas de los alumnos de 
