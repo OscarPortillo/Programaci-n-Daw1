@@ -1,0 +1,24 @@
+import java.util.*;
+public class Tabla {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		// TODO Auto-generated method stub
+		int num,i;/* 
+		System.out.println("introduce un numero");
+			num=teclado.nextInt();
+			for(i=1;i<=num;i++){
+				System.out.println(num+" * "+ i+" = "+num*i);
+			}*/
+		System.out.println("introduce un numero");
+			num=teclado.nextInt();
+			while (num!=0){
+				System.out.println("introduce un numero");
+				num=teclado.nextInt();
+				
+					
+			}System.out.println("numero introducido"+num);
+			
+		}
+
+}

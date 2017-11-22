@@ -9,6 +9,7 @@ INDEX VERSION 1.130+C:\Programación\tema4Strings\wks_04\.metadata\.plugins\org.e
 2889250440.index
 587396572.index
 956306441.index
+1994249142.index
 1077968227.index
 2680059523.index
 2564010650.index

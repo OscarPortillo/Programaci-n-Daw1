@@ -1,5 +1,6 @@
 
 import java.io.*;
+import java.util.Random;
 
 public class Leer {
 
@@ -21,14 +22,13 @@ public class Leer {
 		return dato;
 
 	}
-	
+
 	static public int pedirEnteroValidar(String texto) {
 		BufferedReader dataIn = new BufferedReader(new InputStreamReader(
 				System.in));
 		int dato=0;
 		boolean error = true;
 		while (error) {
-			
 			try {
 				System.out.println(texto);
 				dato = Integer.parseInt(dataIn.readLine());
@@ -45,7 +45,7 @@ public class Leer {
 		return dato;
 
 	}
-	
+
 	static public double decimal(String texto) {
 		BufferedReader dataIn = new BufferedReader(new InputStreamReader(
 				System.in));
@@ -89,5 +89,10 @@ public class Leer {
 		}
 		return dato;
 
+	}
+	public int numAzar(int desde, int hasta){
+		Random azar=new Random();
+		int	num=azar.nextInt(desde)+hasta;
+		return num;
 	}
 }

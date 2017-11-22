@@ -1,0 +1,11 @@
+
+public class romanos {
+
+	public static void main(String[] args) {
+		String unidades[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
+		for(int k=0;k<unidades.length;k++){
+			System.out.println(unidades[k]);
+		}
+	}
+
+}

@@ -1,0 +1,18 @@
+import java.util.*;
+public class romanos {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner (System.in);
+		String unidades[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
+		//int numero=(int)(Math.random()*10+1);
+		int num;
+		num= (int)(Math.random()*10+1);
+		
+		String numero;
+		numero =Integer.toString(num);
+		if (numero.length() == 1){
+			System.out.println(unidades[(int)numero.charAt(0)-48]);
+		}
+	}
+
+}
