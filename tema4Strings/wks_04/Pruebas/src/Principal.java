@@ -1,24 +1,56 @@
+import java.util.Scanner;
 
 public class Principal {
 
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
-		@SuppressWarnings("unused")
-		String s1[][]=new String[3][3];
-		Leer leer=new Leer();
-		String nombre = "";
-		String ape="";
-		int edad = 0;
-		System.out.println("Introduzca un nombre: ");
-		nombre=leer.pedirCadena(nombre);
+		// TODO Auto-generated method stub
+		Scanner teclado = new Scanner(System.in);
+		int n1, n2, resta,opc;
+		do{
+			System.out.println("1- suma");
+			System.out.println("2- resta");
+			System.out.println("3- multiplicacion");
+			System.out.println("4- division");
+			System.out.println("0- Salir");
+			opc=teclado.nextInt();
 
-		System.out.println("Introduce un apellido: ");		
-		ape=leer.pedirCadena(ape);
-		System.out.println("Introduce la edad: ");
-		edad=leer.numAzar(7, 10);
-		
-		System.out.println("INFO DE LA PERSONA");
-		System.out.println("\t Nombre :"+nombre+" \n \t Apellido :"+ape+" \n \t Edad :"+edad);
+			switch(opc){
+			case 1://suma
+
+				break;
+			case 2://resta
+				System.out.println("Escribe un número del 1 al 9");
+				n1 = teclado.nextInt();
+
+
+				System.out.println("Escribe un número del 1 al 9");
+				n2 = teclado.nextInt();
+				if(n2==0){
+					System.out.println("Introduce un numero mayor que 0");
+				}
+				resta = n1-n2;
+				
+				System.out.println("La resta de " + n1 + " y " + n2 + " es " + resta);
+				break;
+			case 3:
+				//multiplicacion
+				System.out.println("Escribe un número del 1 al 9");
+				n1 = teclado.nextInt();
+
+
+				System.out.println("Escribe un número del 1 al 9");
+				n2 = teclado.nextInt();
+				if(n2==0){
+					System.out.println("Introduce un numero mayor que 0");
+				}
+				System.out.println("La multiplicacion de " + n1 + " y " + n2 + " es: " + n1*n2);
+				break;
+			}
+
+		}while(opc!=0);
+
+
 	}
 
 }

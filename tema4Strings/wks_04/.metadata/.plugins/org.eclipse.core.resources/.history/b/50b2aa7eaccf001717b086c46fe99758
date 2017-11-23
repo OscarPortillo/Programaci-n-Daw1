@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Principal {
+
+	@SuppressWarnings("static-access")
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado = new Scanner(System.in);
+		int n1, n2, resta,opc;
+		do{
+			System.out.println("1- suma");
+			System.out.println("2- resta");
+			System.out.println("3- multiplicacion");
+			System.out.println("4- division");
+			opc=teclado.nextInt();
+
+			switch(opc){
+			case 1://suma
+
+				break;
+			case 2://resta
+				System.out.println("Escribe un número del 1 al 9");
+				n1 = teclado.nextInt();
+
+
+				System.out.println("Escribe un número del 1 al 9");
+				n2 = teclado.nextInt();
+				if(n2==0){
+					System.out.println("Introduce un numero mayor que 0");
+				}
+				resta = n1-n2;
+				
+				System.out.println("La resta de " + n1 + " y " + n2 + " es " + resta);
+				break;
+			case 3:
+				//multiplicacion
+				System.out.println("Escribe un número del 1 al 9");
+				n1 = teclado.nextInt();
+
+
+				System.out.println("Escribe un número del 1 al 9");
+				n2 = teclado.nextInt();
+				resta = n1-n2;
+				System.out.println("La multiplicacion de " + n1 + " y " + n2 + " es: " + n1*n2);
+				break;
+			}
+
+		}while(opc!=0);
+
+
+	}
+
+}
