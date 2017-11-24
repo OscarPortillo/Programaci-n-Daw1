@@ -1,0 +1,25 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		@SuppressWarnings({ "unused", "resource" })
+		Scanner teclado=new Scanner(System.in);
+		@SuppressWarnings("unused")
+		int edad;
+		@SuppressWarnings("unused")
+		String nombres[]={"Oscar","María","Jose","Waldo","Jaime","Alex","David","Peña","Pablo","Gonzalo","Mardo","Messi","Lionel","Andrés","Alvaro","Nelly","Beatrice"};
+		//System.out.println(nombres.length);
+		
+		String vecNombres[]=new String[15];
+		for(int k=0;k<10;k++){
+			vecNombres[k]=nombres[(int)(Math.random()*nombres.length+1)];
+			//vecNombres[k]=nombres[(int)(Math.random()*nombres.length+1)];
+			
+		}
+		
+		for(int k=0;k<10;k++){
+		System.out.println(vecNombres[k]);//;=nombres[(int)(Math.random()*nombres.length+1)];
+		}
+	}//main
+
+}//class

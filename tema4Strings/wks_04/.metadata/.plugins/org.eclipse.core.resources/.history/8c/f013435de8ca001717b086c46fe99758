@@ -1,9 +1,0 @@
-import java.util.*;
-public class Ejer38 {
-
-	public static void main(String[] args) {
-		Scanner teclado = new Scanner (System.in);
-		Random azar=new Random();
-	}
-
-}

@@ -1,0 +1,9 @@
+import java.util.*;
+public class PruebasStringAleatorios {
+
+	public static void main(String[] args) {
+		Scanner t=new Scanner(System.in);
+		String nombres[]={"oscar","waldo","nelly","raquel","maría","jaime"};
+	}
+
+}

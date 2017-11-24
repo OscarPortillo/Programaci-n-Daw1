@@ -1,8 +1,0 @@
-import java.util.*; 
-public class Leer {
-
-	private String nombre;
-	private String apellido;
-	private int edad;
-	 
-}

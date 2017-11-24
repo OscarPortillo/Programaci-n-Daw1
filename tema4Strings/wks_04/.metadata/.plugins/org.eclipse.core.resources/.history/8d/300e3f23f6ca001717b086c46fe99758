@@ -1,9 +1,0 @@
-import java.util.*;
-public class Leer {
-	Scanner teclado= new Scanner(System.in);
-	public String pedirCadena (String dato){
-		dato=teclado.nextLine();
-		return dato;
-
-	}
-}

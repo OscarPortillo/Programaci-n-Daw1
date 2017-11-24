@@ -11,6 +11,7 @@ public class VictorCampos {
 		String vuni[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};//vector para unidades
 		String numstring, numromano, diguni, digcente, digdece, digmil;
 
+		@SuppressWarnings("resource")
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("Introduce el numero, entre 1 y 4999");
 
