@@ -10,7 +10,7 @@ public class Principal {
 
 
 		String nombres[]={"Oscar","María","Jose","Waldo","Rene","Alex","David","Peña","Pablo","Gonzalo","Mardo","Messi","Lionel",
-				"Andrés","Alvaro","Nelly","Beatrice","Ioana","Miriam","Kelly","Katherin","Mayra","Raquel","Vycky"};
+				"Andrés","Alvaro","Nelly","Beatrice","Ioana","Miriam","Kelly","Katherin","Mayra","Raquel",""};
 		System.out.println("long vector: "+nombres.length);
 
 		String vecNombres[]=new String[20];
@@ -26,8 +26,8 @@ public class Principal {
 			System.out.print(num+++" - "+vecNombres[k]+" ");//muetsro los nombres que intruje en el vector
 		}
 		System.out.println();
+
 		System.out.println("Introduce el nombre a buscar: ");	 
-		
 		nombreBuscar=teclado.nextLine();
 		for(int j=0; j< 20; j++){
 			if(vecNombres[j].equals(nombreBuscar)){

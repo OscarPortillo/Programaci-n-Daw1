@@ -10,7 +10,7 @@ public class Principal {
 
 
 		String nombres[]={"Oscar","María","Jose","Waldo","Rene","Alex","David","Peña","Pablo","Gonzalo","Mardo","Messi","Lionel",
-				"Andrés","Alvaro","Nelly","Beatrice","Ioana","Miriam","Kelly","Katherin","Mayra","Raquel","Vycky"};
+				"Andrés","Alvaro","Nelly","Beatrice","Ioana","Miriam","Kelly","Katherin","Mayra","Raquel",""};
 		System.out.println("long vector: "+nombres.length);
 
 		String vecNombres[]=new String[20];
