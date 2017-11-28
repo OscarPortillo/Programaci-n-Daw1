@@ -1,0 +1,13 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		String vecPalabras[]={"messi","demblele","pitoshicos"};
+		String letra,palabraMisteriosa;
+		char palabraPrueba[];
+		int contador;
+		
+	}//main
+
+}//class

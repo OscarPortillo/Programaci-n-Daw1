@@ -11,6 +11,7 @@ public class Principal {
 								  };
 	
 		int cartas = barajaOriginal.length; 
+		
 		while (cartas >0)
 		{
 		int pos = (int) (Math.random() * cartas);
