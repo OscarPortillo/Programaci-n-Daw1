@@ -3,6 +3,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 
+		@SuppressWarnings("resource")
 		Scanner teclado=new Scanner(System.in);
 
 		String vecPalabras[]={"messi","dembele","pitoshicos"};
