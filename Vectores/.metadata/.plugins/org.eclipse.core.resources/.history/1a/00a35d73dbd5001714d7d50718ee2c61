@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		int numero,i;
+		String asterisco="";
+		System.out.println("Introduce un numero mayor que 0");
+		numero=teclado.nextInt();
+		if (numero<1){
+			System.out.println("Número erróneo");
+		} else {
+			for ( i = 1; i < numero; i++ ) 
+				asterisco += " "; 
+			asterisco += "*";
+			System.out.println(asterisco); 
+
+			for ( i = 1; i < numero; i++ ) { 
+				asterisco = asterisco.replace(" *", "**"); 
+				System.out.println(asterisco); 
+			} 
+		} 
+		
+		
+		
+	}//main
+
+}//class

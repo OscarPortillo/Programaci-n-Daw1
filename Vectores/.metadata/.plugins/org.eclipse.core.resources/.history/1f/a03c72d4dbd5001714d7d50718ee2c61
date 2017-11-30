@@ -1,0 +1,51 @@
+package cartas;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		String barajaOriginal[] = { "1♦","2♦","3♦","4♦","5♦","6♦","7♦","8♦","9♦","10♦",
+									"1♥","2♥","3♥","4♥","5♥","6♥","7♥","8♥","9♥","10♥",
+									"1♣","2♣","3♣","4♣","5♣","6♣","7♣","8♣","9♣","10♣",
+									"1♠","2♠","3♠","4♠","5♠","6♠","7♠","8♠","9♠","10♠",
+								  };
+	
+		int cartas = barajaOriginal.length; 
+		
+		while (cartas >0)
+		{
+		int pos = (int) (Math.random() * cartas);
+		System.out.println(barajaOriginal[pos]);
+		barajaOriginal[pos] = barajaOriginal[cartas-1];
+		cartas--;
+		}
+		
+		
+		
+		
+		Scanner teclado=new Scanner(System.in);
+		int numero,i;
+		String asterisco="";
+		System.out.println("Introduce un numero mayor que 0");
+		numero=teclado.nextInt();
+		if (numero<1){
+			System.out.println("Número erróneo");
+		} else {
+			for ( i = 1; i < numero; i++ ) 
+				asterisco += " "; 
+			asterisco += "*";
+			System.out.println(asterisco); 
+
+			for ( i = 1; i < numero; i++ ) { 
+				asterisco = asterisco.replace(" *", "**"); 
+				System.out.println(asterisco); 
+			} 
+		} 
+		
+		
+		
+	}//
+
+}//

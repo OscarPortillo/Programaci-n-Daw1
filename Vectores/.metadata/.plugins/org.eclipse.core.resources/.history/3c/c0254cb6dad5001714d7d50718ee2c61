@@ -1,0 +1,25 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		int num;
+		String asterisco=" ";
+		do{
+			System.out.println("Introduce un numero: ");
+			num=(int)(Math.random()*6+1);
+		}while(num<1);
+		for(int i=0;i<num;i++){
+			asterisco=" ";
+			asterisco+="*";
+			System.out.println(asterisco);
+			for(int k=0;k<num;k++){
+				asterisco=asterisco.replace(" *", "**");
+				System.out.println(asterisco);
+			}
+		}
+		
+		
+		
+	}//main
+
+}//class

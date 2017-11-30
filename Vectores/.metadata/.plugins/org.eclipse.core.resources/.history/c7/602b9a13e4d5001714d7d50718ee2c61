@@ -1,0 +1,34 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner teclado=new Scanner(System.in);
+		@SuppressWarnings("unused")
+		String parteLocal,dominio;
+		boolean correcto=false;
+		do{
+			System.out.println("Introduce un correco electrónico");
+			parteLocal=teclado.nextLine();
+
+
+		}while(parteLocal.length()>64);
+		
+		for(int i=0;i<parteLocal.length();i++){//for para recorrer la parte local
+			if(parteLocal.charAt(i) > 90 || parteLocal.charAt(i)<65
+					|| parteLocal.charAt(i) < 122 || parteLocal.charAt(i) > 97
+					|| parteLocal.charAt(i) < 49 || parteLocal.charAt(i) > 57){
+
+				correcto = false;
+
+			}else{
+				correcto=true;
+			}
+		}
+		if(correcto==true){
+			System.out.println(parteLocal+"@"+" Elige tu dominio: ");
+			dominio=teclado.nextLine();
+		}
+	}//main
+
+}//class
