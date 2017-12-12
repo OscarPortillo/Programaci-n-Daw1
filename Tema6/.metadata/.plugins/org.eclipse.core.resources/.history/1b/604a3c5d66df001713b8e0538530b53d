@@ -1,0 +1,11 @@
+
+public class principal {
+
+	public static void main(String[] args) {
+		Indicador miIndicador;
+		
+		miIndicador=new Indicador();
+		
+	}//main
+
+}//class

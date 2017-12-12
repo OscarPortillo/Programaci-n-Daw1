@@ -1,0 +1,13 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		Hora reloj;
+		reloj = new Hora ();
+		
+		System.out.println(reloj.getHora()+":"+reloj.getMinuto()+":"+reloj.getSegundo());
+		System.out.println();
+		System.out.println("Introduce la hora");
+	}//main
+
+}//class

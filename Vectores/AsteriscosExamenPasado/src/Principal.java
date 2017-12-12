@@ -13,8 +13,7 @@ public class Principal {
 		
 		if(num < 1){
 			System.out.println("Error");
-		}else{
-
+		} else {
 				for(  i = 1 ; i <= num ; i++ ) 
 					asterisco += " ";			
 				asterisco += "*";

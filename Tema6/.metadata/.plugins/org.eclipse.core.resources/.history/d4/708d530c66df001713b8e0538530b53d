@@ -1,0 +1,6 @@
+
+public class Indicador {
+	private int nivel;
+	private int tacometro;
+	
+}//class
