@@ -7,6 +7,7 @@ public class principal {
 		Indicador miIndicador;
 		int nivel,tacometro;
 		String color;
+		@SuppressWarnings("resource")
 		Scanner teclado=new Scanner(System.in);
 		miIndicador=new Indicador();
 		System.out.println("Nivel del indicador: "+miIndicador.getNivel());

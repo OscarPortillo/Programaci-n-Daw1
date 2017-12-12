@@ -1,0 +1,7 @@
+
+public class tragaBolas {
+	private String color;
+	private int bolasComidas;
+	private int maxBolas;
+	
+}

@@ -7,7 +7,6 @@ public class Principal {
 		Hora reloj;
 		reloj = new Hora ();
 		int hora,min,seg;
-		String hora2="",minuto="",segundo="";
 		System.out.println(reloj.getHora()+":"+reloj.getMinuto()+":"+reloj.getSegundo());
 		
 		System.out.println();
