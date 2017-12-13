@@ -1,4 +1,5 @@
 
+@SuppressWarnings("unused")
 public class Hora {
 	private int segundo;
 	private int minuto;

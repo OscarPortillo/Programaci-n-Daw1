@@ -1,0 +1,41 @@
+import java.util.*;
+import java.util.GregorianCalendar;
+public class Principal {
+
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Calendar ahoraCal= Calendar.getInstance();
+		Scanner teclado=new Scanner(System.in);
+		Hora reloj;
+		reloj = new Hora ();
+		int hora,min,seg;
+		System.out.println(reloj.getHora()+":"+reloj.getMinuto()+":"+reloj.getSegundo());
+		
+		System.out.println();
+		
+		//System.out.println("Introduce la hora");
+		//hora=teclado.nextInt();
+		
+		reloj.setHora(ahoraCal.getMaximum(Calendar.HOUR));
+		//System.out.println("Introduce los minutos");
+		//min=teclado.nextInt();
+		
+		reloj.setMinuto(ahoraCal.getMaximum(Calendar.MINUTE));
+		//System.out.println("Introduce los segundos");
+		//seg=teclado.nextInt();
+		
+		reloj.setSegundo(ahoraCal.getMaximum(Calendar.SECOND));
+		reloj.verHora();
+		//System.out.println("año: "+ahora.get(Calendar.YEAR));
+		System.out.println("ANYO: "+ahoraCal.get(Calendar.YEAR));
+		System.out.println("MES: "+ahoraCal.get(Calendar.MONTH));
+		System.out.println("DIA: "+ahoraCal.get(Calendar.DATE));
+		System.out.println("HORA: "+ahoraCal.get(Calendar.HOUR));
+		if (ahoraCal.get(Calendar.MONTH) == Calendar.JUNE){
+		 System.out.println("ES JUNIO");
+		}else{
+		 System.out.println("NO ES JUNIO");
+		}
+	}//main
+
+}//class

@@ -1,0 +1,32 @@
+import java.util.*;
+import java.util.GregorianCalendar;
+public class Principal {
+
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Calendar ahora= Calendar.getInstance();
+		Scanner teclado=new Scanner(System.in);
+		Hora reloj;
+		reloj = new Hora ();
+		int hora,min,seg;
+		System.out.println(reloj.getHora()+":"+reloj.getMinuto()+":"+reloj.getSegundo());
+		
+		System.out.println();
+		
+		//System.out.println("Introduce la hora");
+		//hora=teclado.nextInt();
+		
+		reloj.setHora(ahora.getMaximum(Calendar.HOUR));
+		//System.out.println("Introduce los minutos");
+		//min=teclado.nextInt();
+		
+		reloj.setMinuto(ahora.getMaximum(Calendar.MINUTE));
+		//System.out.println("Introduce los segundos");
+		//seg=teclado.nextInt();
+		
+		reloj.setSegundo(ahora.getMaximum(Calendar.SECOND));
+		reloj.verHora();
+		//System.out.println("año: "+ahora.get(Calendar.YEAR));
+	}//main
+
+}//class
