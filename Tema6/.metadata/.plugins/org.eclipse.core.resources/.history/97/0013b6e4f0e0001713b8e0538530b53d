@@ -1,0 +1,32 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner teclado=new Scanner(System.in);
+		Hora reloj;
+		reloj = new Hora ();
+		reloj.verHoraModificada();
+		int hora = 0,horaAux = 0;
+		int minutos,segundo;
+		System.out.println("Introduce los minutos");
+		minutos=teclado.nextInt();
+		reloj.setMinuto(minutos);
+		System.out.println("Introduce los segundos");
+		segundo=teclado.nextInt();
+		reloj.setSegundo(segundo);
+		while(minutos>60){
+			minutos=minutos-60;
+			hora++;
+			reloj.setHora(hora);
+		}
+		while(segundo>60){
+			segundo=segundo-60;
+			minutos++;			
+		}
+		System.out.println(hora+":"+minutos+":"+segundo);
+		reloj.verHora();
+		
+	}//main
+
+}//class

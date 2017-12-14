@@ -59,7 +59,8 @@ public class Empleado {
      *  <li>false: el nombre no es una cadena vacía</li>
      *  </ul>
      */
-    private boolean comprobar(){
+    @SuppressWarnings("unused")
+	private boolean comprobar(){
         if(nombre.equals("")){
             return false;
         }

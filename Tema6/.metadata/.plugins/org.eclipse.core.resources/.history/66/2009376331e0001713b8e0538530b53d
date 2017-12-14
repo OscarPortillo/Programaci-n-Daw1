@@ -1,0 +1,34 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		tragaBolas miTragaBolas;
+		String color;
+		int maxBolas;
+		int opc;
+		miTragaBolas=new tragaBolas();
+		do{
+			System.out.println("1: Crear tragabolas");
+			System.out.println("2: Darle de comer");
+			System.out.println("3: Hacerle dormir");
+			System.out.println("4: Ver estado");
+			System.out.println("0: fin");
+			opc=teclado.nextInt();
+			switch(opc){
+				System.out.println("Color: ");
+				miTragaBolas.getColor();
+				System.out.println("Bolas comidas: ");
+				miTragaBolas.getBolasComidas();
+				System.out.println("Máximo de bolas: ");
+				miTragaBolas.getMaxBolas();
+				break;
+			}
+		}while(opc!=0);
+		
+		
+		
+		
+	}//main
+
+}//class

@@ -25,5 +25,10 @@ public class tragaBolas {
 	public void setMaxBolas(int maxBolas) {
 		this.maxBolas = maxBolas;
 	}
-	
+	public void verEstado(){
+		if(bolasComidas!=0){
+			maxBolas=maxBolas-1;
+			
+		}
+	}
 }
