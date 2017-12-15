@@ -79,10 +79,8 @@ public class calendario {
 		}
 		if(segundos<10){
 			System.out.print( "0"+segundos);
-		}else{
-			System.out.print(segundos);
 		}
-		//System.out.println(hora+":"+minutos+":"+segundos);
+		System.out.println(hora+":"+minutos+":"+segundos);
 
 	}//metodo ver hora
 

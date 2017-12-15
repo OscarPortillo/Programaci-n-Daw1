@@ -51,11 +51,11 @@ public class calendario {
 
 
 	public void Darhora () {
-		
-		int horaAux=calendario.get(Calendar.HOUR_OF_DAY)+hora;
-		while (horaAux>=24){
-			hora=hora-24; 
-			System.out.println(hora);
+		@SuppressWarnings("unused")
+		int horaAux=0;
+		while (calendario.get(Calendar.HOUR_OF_DAY)+hora>=24){
+			hora=calendario.get(Calendar.HOUR_OF_DAY)+hora-24; 
+			//horaAux=hora;
 		}
 		while (minutos>60) {
 			minutos=minutos-60;
@@ -66,24 +66,9 @@ public class calendario {
 			segundos=segundos-60;
 			minutos++;
 		}
-		if(hora<10){
-			System.out.print( "0"+hora+":");
-		}else{
-			System.out.print(  hora+":");
-		}
-		
-		if(minutos<10){
-			System.out.print( "0"+minutos+":");		
-		}else{
-			System.out.print( minutos+":");
-		}
-		if(segundos<10){
-			System.out.print( "0"+segundos);
-		}else{
-			System.out.print(segundos);
-		}
-		//System.out.println(hora+":"+minutos+":"+segundos);
+		System.out.println(hora+":"+minutos+":"+segundos);
 
-	}//metodo ver hora
+	}
 
-}//class
+}	
+

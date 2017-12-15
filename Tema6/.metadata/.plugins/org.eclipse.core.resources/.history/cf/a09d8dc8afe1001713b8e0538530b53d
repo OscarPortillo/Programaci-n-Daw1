@@ -68,21 +68,16 @@ public class calendario {
 		}
 		if(hora<10){
 			System.out.print( "0"+hora+":");
-		}else{
-			System.out.print(  hora+":");
 		}
 		
 		if(minutos<10){
-			System.out.print( "0"+minutos+":");		
-		}else{
-			System.out.print( minutos+":");
+			System.out.print( "0"+minutos+":");
+		
 		}
 		if(segundos<10){
 			System.out.print( "0"+segundos);
-		}else{
-			System.out.print(segundos);
 		}
-		//System.out.println(hora+":"+minutos+":"+segundos);
+		System.out.println(hora+":"+minutos+":"+segundos);
 
 	}//metodo ver hora
 

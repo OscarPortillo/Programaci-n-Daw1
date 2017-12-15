@@ -82,7 +82,7 @@ public class calendario {
 		}else{
 			System.out.print(segundos);
 		}
-		//System.out.println(hora+":"+minutos+":"+segundos);
+		System.out.println(hora+":"+minutos+":"+segundos);
 
 	}//metodo ver hora
 
