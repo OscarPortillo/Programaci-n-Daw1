@@ -1,0 +1,42 @@
+
+public class Estaticos {
+	private static int num;
+
+	Estaticos(int num){
+		this.num=num;
+	}
+	
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+	public static void primo(int num){
+		int i,contador		for(i=1;i<(num+1);i++){
+			if(num%i==0){
+				a++;contador
+		}
+		if(a!=2){// scontadorador es distinto de 2 no es primo
+			System.out.println("No es primo");
+		}else{
+			System.out.println("Es primo");
+		}
+	}// metodo ver si es primo
+	public static void saberPrimo(){
+		int i,a=0;
+		for(i=1;i<(num+1);i++){
+			if(num%i==0){
+				a++;
+			}
+		}
+		if(a!=2){// si contador es distinto de 2 no es primo
+			System.out.println("No es primo");
+		}else{
+			System.out.println("Es primo");
+		}
+	}// metodo ver si es primo
+
+}//class estaticos

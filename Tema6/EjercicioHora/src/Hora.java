@@ -32,6 +32,7 @@ public class Hora {
 		String hora2="";
 		String min="";
 		String seg="";
+		
 		if(tiempo.get(Calendar.HOUR_OF_DAY)<10){
 			hora2=0+""+tiempo.get(Calendar.HOUR_OF_DAY);
 		}else{
@@ -51,13 +52,9 @@ public class Hora {
 		System.out.println();
 		System.out.println("Hora real");
 		System.out.println(hora2+":"+min+":"+seg);
-		System.out.println();
-		
+		System.out.println();		
 	}
 	public void verHoraModificada(){
-		String hora2="";
-		String min="";
-		String seg="";
 		while(minuto>=60){//si minuto es mayor que 60
 			minuto=minuto-60;// a minuto le resto 60
 			hora++;	//y le sumo 1 a hora osea que en total tendria si minuto valira 64 tendria 01:04		
@@ -87,6 +84,6 @@ public class Hora {
 		//System.out.println(hora2+":"+min+":"+seg);
 		System.out.println();
 		
-	}
+	}//ver hora modificada
 	
-}
+}//class
