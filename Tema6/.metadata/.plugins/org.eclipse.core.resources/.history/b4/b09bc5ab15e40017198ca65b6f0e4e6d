@@ -1,0 +1,16 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado=new Scanner(System.in);
+		Coche miCoche=new Coche();
+		String color;
+		int vel,ruedas;
+		System.out.println("Cambiar datos del coche: ");
+		color=teclado.nextLine();
+		miCoche.setColor(color);
+		
+	}//main
+
+}//class

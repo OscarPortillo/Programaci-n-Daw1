@@ -20,22 +20,12 @@ public class principal {
 		System.out.print( "hora: " + tiempo.getHora()+":"+tiempo.getMinutos()+":"+tiempo.getSegundos() );
 		
 		
-		if(tiempo.getHora()<10){
-			System.out.print( "0"+tiempo.getHora());
-		}
 		
-		if(tiempo.getMinutos()<10){
-			System.out.print( "0"+tiempo.getHora());
-		
-		}
-		if(tiempo.getSegundos()<10){
-			System.out.print( "0"+tiempo.getHora());
-		}
 		System.out.println();
 		System.out.println("dame un numero para las horas");
 		n=teclado.nextInt();
 		tiempo.setHora(n);
-		
+		teclado.close();
 	//System.out.println(tiempo.getHora()+":"+tiempo.getMinutos()+":"+tiempo.getSegundos()) ;
 	}//main
 

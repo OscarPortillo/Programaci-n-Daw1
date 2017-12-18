@@ -1,0 +1,11 @@
+
+public class Coche {
+	private String color;
+	private int velocidad;
+	private int ruedas;
+	Coche(){
+		color="Rojo";
+		velocidad=0;
+		ruedas=4;
+	}
+}

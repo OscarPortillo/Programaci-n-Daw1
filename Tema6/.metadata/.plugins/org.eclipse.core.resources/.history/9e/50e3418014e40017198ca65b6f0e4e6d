@@ -1,0 +1,6 @@
+
+public class Coche {
+	private String color;
+	private int velocidad;
+	private int ruedas;
+}
