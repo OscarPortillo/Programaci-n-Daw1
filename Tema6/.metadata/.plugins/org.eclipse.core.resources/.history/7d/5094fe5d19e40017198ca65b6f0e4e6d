@@ -1,0 +1,36 @@
+/**
+ * ) Desarrollar un programa en Java que utilice una clase que se llame Indicador que sea la
+ * representación de un indicador de la vida real (indicadores de nivel, de velocidad,
+ * tacómetros, etc). Deberá tener los mínimos elementos para representar valores,
+ * ajustarlos con un valor de inicio, imprimir el valor, modificarlos a un valor determinado e
+ * incrementar y disminuir el valor con el que cuentan.
+ *
+ */
+import java.util.*;
+
+public class PrincipalIndicador {
+
+	public static void main(String[] args) {
+		Scanner t=new Scanner(System.in);
+		
+		System.out.println();
+		Indicador miIndicador=new Indicador();
+		miIndicador.verIndicador();
+		
+		int nivel, velocidad, tacometro;
+		
+		System.out.println("Introduzca nivel");
+		nivel=t.nextInt();
+		miIndicador.setIndicadorNivel(nivel);
+		System.out.println("Introduce velocidad");
+		velocidad=t.nextInt();
+		miIndicador.setIndicadorVelocidad(velocidad);
+		System.out.println("Introduce tacometro");
+		tacometro=t.nextInt();
+		miIndicador.setIndicadorTacometro(tacometro);
+		miIndicador.verIndicador1();
+		System.out.println();
+		System.out.println(miIndicador.getIndicadorNivel());
+	}
+
+}

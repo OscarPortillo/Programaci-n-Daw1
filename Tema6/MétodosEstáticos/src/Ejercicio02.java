@@ -15,6 +15,14 @@ public class Ejercicio02 {
 		num1=teclado.nextInt();
 		System.out.println("Introduce otro numero:");
 		num2=teclado.nextInt();
-		Estaticos.divisores(num1, num2);
+		
+		if(Estaticos.divisores(num1) > Estaticos.divisores(num2)){
+			System.out.println(num1 +" tiene más divisores que "+num2);
+		}else if(Estaticos.divisores(num1) < Estaticos.divisores(num2)){
+			System.out.println(num2 +" tiene más divisores que "+num1);
+		}else{
+			System.out.println("tienen los mismos divisores");
+		}
+		
 	}//main
 }//class ejercicio02

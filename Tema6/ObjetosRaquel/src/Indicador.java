@@ -1,0 +1,49 @@
+
+public class Indicador {
+
+	private int indicadorNivel;
+	private int indicadorVelocidad;
+	private int indicadorTacometro;
+
+	Indicador(){
+		indicadorNivel=0;
+		indicadorVelocidad=0;
+		indicadorTacometro=0;
+	}
+
+	public int getIndicadorNivel() {
+		return indicadorNivel;
+	}
+
+	public void setIndicadorNivel(int indicador) {
+		this.indicadorNivel = indicador;
+	}
+
+	public int getIndicadorVelocidad() {
+		return indicadorVelocidad;
+	}
+
+	public void setIndicadorVelocidad(int indicadorVelocidad) {
+		this.indicadorVelocidad = indicadorVelocidad;
+	}
+
+	public int getIndicadorTacometro() {
+		return indicadorTacometro;
+	}
+
+	public void setIndicadorTacometro(int indicadorTacometro) {
+		this.indicadorTacometro = indicadorTacometro;
+	}
+	
+	public void verIndicador(){
+		System.out.println("indicador Nivel "+indicadorNivel);
+		System.out.println("indicador Velocidad "+indicadorVelocidad);
+		System.out.println("indicador Tacometro "+indicadorTacometro);
+	}
+	public void verIndicador1(){
+		System.out.println("VALORES INTRODUCIDOS MANUELMENTE");
+		System.out.println("indicador Nivel "+indicadorNivel);
+		System.out.println("indicador Velocidad "+indicadorVelocidad);
+		System.out.println("indicador Tacometro "+indicadorTacometro);
+	}
+}//

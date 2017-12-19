@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Ejercicio08 {
+	/**
+	 * Dados m elementos de un conjunto que se desean agrupar de n en n el número combinatorio
+	 * que nos define dicho numero de combinaciones posibles es m!/(n!*(m-n)!), siendo siempre m
+	 * >=n (hay que filtrarlo)
+	 * Escribir un método para que dados como parámetros m y n nos calcule el número de
+	 * combinaciones de m sobre n. Usad el método factorial del ejercicio 3.
+	 */
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		
+
+	}//main
+
+}//class
