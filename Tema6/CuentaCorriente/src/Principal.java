@@ -5,7 +5,7 @@ public class Principal {
 		Scanner teclado = new Scanner(System.in);
 		CuentaCorriente cuenta1,cuenta2;//=new CuentaCorriente("001",0,"Oscar Portillo");
 		cuenta1=new CuentaCorriente("001",0,"Oscar Portillo");
-		cuenta2=new CuentaCorriente("002",0,"Raquel Fernández");
+		cuenta2=new CuentaCorriente("002",0,"Gonzalo Portillo");
 		//cuenta1.visualiza();
 		//cuenta2.visualiza();
 		double ingreso,retiro;

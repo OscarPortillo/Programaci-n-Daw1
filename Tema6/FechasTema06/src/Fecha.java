@@ -1,12 +1,10 @@
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
+ 
 public class Fecha {
 	private Integer dia;
 	private Integer mes;
 	private Integer año;
 
-	Fecha(int dia,int mes,int año){
+	Fecha(Integer dia,Integer mes,Integer año){
 		this.dia=dia;
 		this.mes=mes;
 		this.año=año;
@@ -35,11 +33,9 @@ public class Fecha {
 	public void setAño(Integer año) {
 		this.año = año;
 	}
-	public static boolean esBisiesto() {
+	public   boolean esBisiesto() {
 		boolean esBisiesto;
-		Calendar fecha=new GregorianCalendar();
-		int año;
-		año=fecha.get(Calendar.YEAR);
+		
 		if((año % 4 == 0)&& ((año % 100!= 0) || (año % 400 == 0))){
 			esBisiesto=true;
 		}else{
@@ -48,100 +44,259 @@ public class Fecha {
 		return esBisiesto;
 	}//metodo para saber si un año es bisiesto
 
-	public static boolean esCorrecta(){
+	public   boolean esCorrecta(){//metodo para saber si la fecha es correcta
 		boolean correcta=false;
-		@SuppressWarnings("unused")
 		int contaErrores;
 		contaErrores=0;
-		Calendar fecha=new GregorianCalendar();
-		@SuppressWarnings("unused")
-		int dia,mes,año;
-		dia=fecha.get(Calendar.DAY_OF_MONTH);
-		mes=fecha.get(Calendar.MONTH)+1;//le sumo 1 para que no de mes 0
-		//mes=mes-1;
-		año=fecha.get(Calendar.YEAR);
-		if(mes ==13 ){//si mes es mayor que 12 le resto 1 
-			mes=mes-1;
-		}
-		if(mes==1){
-			if(dia<31 && dia>0){
+		if(mes==1){//enero
+			if(dia<31 && dia>0){//si esta bien lo pongo a correcto
+				correcta=true;
+			}else{
+				contaErrores++;//si esta mal algo le sumo 1
+			}
+			if(año<9999 && año>0){
 				correcta=true;
 			}else{
 				contaErrores++;
 			}
-			 
-
-		}else{
-			contaErrores++;
-		}//1
-	/*	if(mes==2){//Febrero
-			if(Fecha.esBisiesto()==true){//si es biciesto entrará y febrero será de 29 días//febrero
+		} 
+		if(mes==2){//Febrero
+			if(esBisiesto()==true){//si es biciesto entrará y febrero será de 29 días//febrero
 				if((dia<29 && dia >0 ) && año <9999 && año >0){//febrero
-					esCorrecta=true;
+					correcta=true;
 				}else{
-					esCorrecta=false;
+					contaErrores++;
 				}
 			}else{//si no es biciesto febrero tendrá 28 días
 				if((dia<28 && dia >0 ) && año <9999 && año >0){
-					esCorrecta=true;
+					correcta=true;
 				}else{
-					esCorrecta=false;
+					contaErrores++;
 				}
 			}
 		}//2
-		if(mes==3 && (dia<31 && dia >0 )&& año <9999 && año >0){//marzo
-			esCorrecta=true;
-		}else{
-			esCorrecta=false;
-		}//3
-		if(mes==4 && (dia<30 && dia >0 )&& año <9999 && año >0){//abril
-			esCorrecta=true;
-		}else{
-			esCorrecta=false;
-		}//4
-		if(mes==5 && (dia<31 && dia >0 )&& año <9999 && año >0){//mayo
-			esCorrecta=true;
-		}else{
-			esCorrecta=false;
-		}//5
-		if(mes==6 && (dia<30 && dia >0 )&& año <9999 && año >0){//junio
-			esCorrecta=true;
-		}else{
-			esCorrecta=false;
-		}//6
-		if(mes==7 && (dia<31 && dia >0 )&& año <9999 && año >0){//julio
-			esCorrecta=true;
-		}else{
-			esCorrecta=false;
-		}//7
-		if(mes==8 && (dia<31 && dia >0 )&& año <9999 && año >0){//agosto
-			esCorrecta=true;
-		}else{
-			esCorrecta=false;
-		}//8
-		if(mes==9 && (dia<30 && dia >0 )&& año <9999 && año >0){//septiembre
-			esCorrecta=true;
-		}else{
-			esCorrecta=false;
-		}//9
-		if(mes==10 && (dia<31 && dia >0 )&& año <9999 && año >0){//Octubre
-			esCorrecta=true;
-		}else{
-			esCorrecta=false;
-		}//10
-		if(mes==11 && (dia<30 && dia >0 )&& año <9999 && año >0){//noviembre
-			esCorrecta=true;
-		}else{
-			esCorrecta=false;
-		}//11
-		if(mes==12 && (dia<31 && dia >0 )&& año <9999 && año >0){//diciembre
-			esCorrecta=true;
-		}else{
-			esCorrecta=false;
-		}//12
-		return esCorrecta;*/
+
+		if(mes==3){//marzo
+			if(dia<31 && dia >0 ){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+			if(año <9999 && año >0){//marzo
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+		}
+
+
+		if(mes==4){//abril
+			if(dia<30 && dia >0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+			if(año<9999 && año<0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+		}
+
+		if(mes==5){//mayo
+			if(dia<31 && dia >0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+			if(año<9999 && año>0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+		} //5
+		if(mes==6){//junio
+			if(dia<31 && dia >0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+			if(año<9999 && año>0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+		} //5
+		if(mes==7){//julio
+			if(dia<31 && dia >0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+			if(año<9999 && año>0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+		} //5
+		if(mes==8){//agosto
+			if(dia<31 && dia >0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+			if(año<9999 && año>0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+		} //5
+		if(mes==9){//septiembre
+			if(dia<30 && dia >0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+			if(año<9999 && año>0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+		} //5
+		if(mes==10){//octubre
+			if(dia<31 && dia >0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+			if(año<9999 && año>0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+		} //5
+		if(mes==11){//noviembre
+			if(dia<30 && dia >0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+			if(año<9999 && año>0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+		} //5
+		if(mes==12){//diciebre
+			if(dia<31 && dia >0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+			if(año<9999 && año>0){
+				correcta=true;
+			}else{
+				contaErrores++;
+			}
+		} //5
+		if(contaErrores!=0){//si es distinto de 0 entonces no vale por que se ha equivocado en alguna parte
+			correcta=false;
+		}
 		return correcta;
 	}//metodo para ver si la fecha es correcta
+	public void getCadenaMes(){//metodo mes Cadena
+		 
+		String mesLetra = null;
+		if(mes==1){
+			mesLetra="Enero";
+		}
+		if(mes==2){
+			mesLetra="Febrero";
+		}
+		if(mes==3){
+			mesLetra="Marzo";
+		}
+		if(mes==4){
+			mesLetra="Abril";
+		}
+		if(mes==5){
+			mesLetra="Mayo";
+		}
+		if(mes==6){
+			mesLetra="Junio";
+		}
+		if(mes==7){
+			mesLetra="Julio";
+		}
+		if(mes==8){
+			mesLetra="Agosto";
+		}
+		if(mes==9){
+			mesLetra="Septiembre";
+		}
+		if(mes==10){
+			mesLetra="Octubre";
+		}
+		if(mes==11){
+			mesLetra="Noviembre";
+		}
+		if(mes==12){
+			mesLetra="Diciembre";
+		}
+		System.out.print(mesLetra);
+	}//metodo mes Cadena
+	public void getDiaMes(){ 
+		int dias = 0;
+		if(mes==1){
+			dias=31;
+		}
+		if(mes==2){
+			if(esBisiesto()){
+				dias=29;
+			}else{
+				dias=28;
+			}
+		}
+		if(mes==3){
+			dias=31;
+		}
+		if(mes==4){
+			dias=30;
+		}
+		if(mes==5){
+			dias=31;
+		}
+		if(mes==6){
+			dias=30;
+		}
+		if(mes==7){
+			dias=31;
+		}
+		if(mes==8){
+			dias=31;
+		}
+		if(mes==9){
+			dias=30;
+		}
+		if(mes==10){
+			dias=31;
+		}
+		if(mes==11){
+			dias=30;
+		}
+		if(mes==12){
+			dias=31;
+		} 
+		System.out.print(" "+dias+"\n");
+	}//metodo dias mes
+	public void getCadenaFecha1(){
+		System.out.println(dia+"-"+mes+"-"+año);
+	}//metodo mostrar fecha
+	public void getCadenaFecha2(){
+		System.out.print(dia+" de ");
+		getCadenaMes();
+		System.out.println(" de "+año);
+	}//metodo mostrar fecha cadena
 }//class
 
 
