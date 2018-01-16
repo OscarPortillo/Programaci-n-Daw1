@@ -1,0 +1,6 @@
+
+public class Fecha {
+	private Integer dia;
+	private Integer mes;
+	private Integer año;
+}

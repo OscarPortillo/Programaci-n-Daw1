@@ -1,0 +1,12 @@
+
+public class CuentaCorriente {
+	private String numCuenta;
+	private double saldo;
+	private String cliente;
+	
+	CuentaCorriente(String cuenta,double cantidad,String cliente){
+		this.numCuenta=cuenta;
+		this.saldo=cantidad;
+		this.cliente=cliente;
+	}
+}//class

@@ -9,6 +9,7 @@ public class Principal {
 		System.out.println("hora inicializada a cero");
 		reloj.verHoraModificada();
 		int minutos,segundo;
+		reloj.verHora();
 		System.out.println("Introduce los minutos");
 		minutos=teclado.nextInt();
 		reloj.setMinuto(minutos);

@@ -1,0 +1,6 @@
+
+public class CuentaCorriente {
+	private String numCuenta;
+	private double saldo;
+	
+}

@@ -1,0 +1,10 @@
+import java.util.Scanner;
+
+public class Principal {
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		CuentaCorriente cuenta1=new CuentaCorriente("001",0,"Oscar Portillo");
+		cuenta1.visualiza();
+		teclado.close();
+	}
+}

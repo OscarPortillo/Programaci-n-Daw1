@@ -1,0 +1,12 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Calendar fecha=new GregorianCalendar();
+		System.out.println(fecha.get(Calendar.YEAR));
+		System.out.println(Fecha.esBisiesto());
+		System.out.println(Fecha.esCorrecta());
+	}
+
+}

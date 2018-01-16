@@ -1,0 +1,10 @@
+
+public class CuentaCorriente {
+	private String numCuenta;
+	private double saldo;
+	private String cliente;
+	
+	CuentaCorriente(String cuenta,double cantidad,String cliente){
+		
+	}
+}
