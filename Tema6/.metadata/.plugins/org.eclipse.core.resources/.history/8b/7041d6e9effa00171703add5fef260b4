@@ -1,0 +1,31 @@
+import java.text.SimpleDateFormat;
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		Date fechaDeHoy = new Date(); 
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
+		String fecha = formato.format(fechaDeHoy); 
+		String[] fechaHoy = fecha.split("/"); 
+		Integer diaHoy = Integer.parseInt(fechaHoy[0]); 
+		Integer mesHoy = Integer.parseInt(fechaHoy[1]); 
+		Integer anioHoy = Integer.parseInt(fechaHoy[2]); 
+
+		String fechaAnterior = "12/10/2001" ;
+		String[] fechaAnt = fechaAnterior.split("/"); 
+		Integer diaAnt = Integer.parseInt(fechaAnt[0]); 
+		Integer mesAnt = Integer.parseInt(fechaAnt[1]); 
+		Integer anioAnt = Integer.parseInt(fechaAnt[2]); 
+
+		if(anioAnt == anioHoy){ 
+			if(mesAnt == mesHoy){ 
+				if(diaAnt == diaHoy){ 
+					System.out.println("las fechas son iguales"); 
+				}else if(diaHoy > diaAnt){ 
+					System.out.println("La diferencia entre ambas fechas es de " + (diaHoy - diaAnt )+ " dias"); 
+				} 
+			} 
+		} 
+	}//main
+
+}//class

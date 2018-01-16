@@ -1,4 +1,4 @@
- 
+
 public class Fecha {
 	private Integer dia;
 	private Integer mes;
@@ -35,7 +35,7 @@ public class Fecha {
 	}
 	public   boolean esBisiesto() {
 		boolean esBisiesto;
-		
+
 		if((año % 4 == 0)&& ((año % 100!= 0) || (año % 400 == 0))){
 			esBisiesto=true;
 		}else{
@@ -205,7 +205,7 @@ public class Fecha {
 		return correcta;
 	}//metodo para ver si la fecha es correcta
 	public void getCadenaMes(){//metodo mes Cadena
-		 
+
 		String mesLetra = null;
 		if(mes==1){
 			mesLetra="Enero";
@@ -297,6 +297,19 @@ public class Fecha {
 		getCadenaMes();
 		System.out.println(" de "+año);
 	}//metodo mostrar fecha cadena
+	public void diferenciafecha(Fecha fecha2){
+		int cont;
+		Integer diasTrans = 0,diasAño=365;
+		for(cont=0;cont<año-1;cont++){
+			if(esBisiesto()==true){
+				diasTrans=diasTrans+diasAño+1;
+			}else{
+				diasTrans=diasTrans+diasAño;
+			}
+		}
+		System.out.println(diasTrans);
+
+	}
 }//class
 
 
