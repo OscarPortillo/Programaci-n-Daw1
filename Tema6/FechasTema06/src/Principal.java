@@ -1,7 +1,8 @@
+import java.text.ParseException;
 import java.util.*;
 public class Principal {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
 		Calendar fecha=new GregorianCalendar();
 		Scanner teclado=new Scanner(System.in);
@@ -27,24 +28,38 @@ public class Principal {
 
 		hoy.getCadenaFecha1();
 		hoy.getCadenaFecha2();
-		System.out.println("Introduzca una fecha válida");
-		System.out.println("Introduzca el día");
-		dia2=23;//teclado.nextInt();
+		/*System.out.println("Introduzca una fecha válida");
+		do{
+			System.out.println("Introduzca el día");
+			dia2=teclado.nextInt();
+		}while(dia2>31 ||   dia2 <1);
+			
 		System.out.println("Introduzca el mes");
-		mes2=2;//teclado.nextInt();
+		mes2=teclado.nextInt();
+		while(mes2>12 || mes2 <1){
+			System.out.println("Introduzca el mes");
+			mes2=teclado.nextInt();
+		}
 		System.out.println("Introduzca el año");
-		año2=2028;//teclado.nextInt();
-		Fecha hoy2=new Fecha(dia2,mes2,año2);
+		año2=teclado.nextInt();
+		String añoString = null;
+		añoString+=año2;
+		while(añoString.length()<4){
+			System.out.println("Introduzca el año");
+			año2=teclado.nextInt();
+			añoString+=año2;
+		}
+		Fecha hoy2=new Fecha(dia2,mes2,año2);*/
 		System.out.println("FECHA INTRODUCIDA MANUALMENTE");
-		System.out.println(hoy2.esBisiesto()+" .... bisiesto");
-		System.out.println(hoy2.esCorrecta()+" .... fecha ");
-		hoy2.getCadenaMes(); 
-		hoy2.getDiaMes();
-
-		hoy2.getCadenaFecha1();
-		hoy2.getCadenaFecha2();
-		hoy2.diferenciafecha(hoy2);
+		System.out.println(hoy.esBisiesto()+" .... bisiesto");
+		System.out.println(hoy.esCorrecta()+" .... fecha ");
+		hoy.getCadenaMes(); 
+		hoy.getDiaMes();
 		
+		hoy.getCadenaFecha1();
+		hoy.getCadenaFecha2();
+		hoy.diferenciaFecha(hoy);
+		teclado.close();
 	}//main
 
 }//class

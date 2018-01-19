@@ -3,7 +3,7 @@
  */
 
 /**
- * @author yo
+ * @author oscar
  *
  */
 public class GestionCuentas {

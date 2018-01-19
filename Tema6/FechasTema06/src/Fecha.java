@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Fecha {
 	private Integer dia;
@@ -297,18 +298,82 @@ public class Fecha {
 		getCadenaMes();
 		System.out.println(" de "+año);
 	}//metodo mostrar fecha cadena
-	public void diferenciafecha(Fecha fecha2){
-		int cont;
-		Integer diasTrans = 0,diasAño=365;
-		for(cont=0;cont<año-1;cont++){
-			if(esBisiesto()==true){
-				diasTrans=diasTrans+diasAño+1;
-			}else{
-				diasTrans=diasTrans+diasAño;
+	public Integer diferenciaFecha(Fecha fecha2) {
+		Scanner teclado=new Scanner(System.in);
+		Integer difDias = 0;
+		int totalDias = 0, totalDias1 = 0, i, dia1, mes1, año1;
+		int diasMeses[] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+		// dado que el mes 0 no existe, lo ponemos a 0 y así cuando compruebe si
+		// tiene 30 o 31 días lo ignorará y pasará al siguiente (para suma de
+		// meses)
+		if (esBisiesto() == true) {
+			diasMeses[2] = 29;
+		}
+
+		System.out.println("Dame un día");
+		dia1 = teclado.nextInt();
+
+		System.out.println("Dame un mes");
+		mes1 = teclado.nextInt();
+
+		System.out.println("Dame un año");
+		año1 = teclado.nextInt();
+
+		fecha2 = new Fecha(año1, mes1, dia1);
+
+		while (año > año1) {
+
+			System.out.println("El primer año debe ser inferior al segundo.");
+			System.out.println();
+
+			System.out.println("Dame un segundo año (mayor que el primero).");
+			año1 = teclado.nextInt();
+
+		}
+		// vamos a obtener cuantos días hay desde un punto de referencia (0) en
+		// las dos fechas, y luego las restaremos entre ellas.
+
+		for (i = 0; i < año - 1; i++) { // es -1 el año porque no es el año
+										// completo, no son 365 días. Eso lo
+										// calculamos más adelante.
+			if (esBisiesto() == true) {
+				totalDias++; // un día más por febrero.
+			}
+			totalDias = i * 365;
+
+		}
+		for (i = 0; i < año1 - 1; i++) {
+			if (esBisiesto() == true) {
+				totalDias1++;
+			}
+			totalDias1 = i * 365;
+		}
+
+		for (i = 0; i < mes; i++) {
+			if (diasMeses[i] == 31) {
+				totalDias = totalDias + 31;
+			}
+			if (diasMeses[i] == 30) {
+				totalDias = totalDias + 30;
 			}
 		}
-		System.out.println(diasTrans);
 
+		for (i = 0; i < mes1; i++) {
+			if (diasMeses[i] == 31) {
+				totalDias1 = totalDias1 + 31;
+			}
+			if (diasMeses[i] == 30) {
+				totalDias1 = totalDias1 + 30;
+			}
+		}
+
+		totalDias = totalDias + dia;
+		totalDias1 = totalDias1 + dia1;
+
+		difDias = totalDias1 - totalDias;
+
+		return difDias;
 	}
 }//class
 
