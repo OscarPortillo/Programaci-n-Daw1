@@ -110,18 +110,10 @@ public class Cuentacorriente {
 		//System.out.println("Existen "+contaCuentas+" cuentas activas");
 		return contaCuentas;
 	}
-	public void cerrarCuenta(){
-		cliente="CERRADA";
-		saldo=0.0;
+	public static   void cerrarCuenta(){
 		contaCuentas=contaCuentas-1;//le resto uno cada que se ejecuta el metodo
 	}
 	public static Cuentacorriente fusiona( Cuentacorriente cuenta1,Cuentacorriente cuenta2){
-		Cuentacorriente cuenta= null;
-		if(cuenta1.cliente.equals(cuenta2.cliente) && !cuenta1.numero.equals(cuenta2)){			
-			cuenta= new Cuentacorriente(cuenta1.saldo+cuenta2.saldo,cuenta1.cliente);
-			cuenta1.cerrarCuenta();
-			cuenta2.cerrarCuenta();
-		}
-		return cuenta;
+		
 	}
 }//class

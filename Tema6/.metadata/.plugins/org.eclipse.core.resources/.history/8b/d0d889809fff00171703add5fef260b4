@@ -11,7 +11,7 @@ public class Principal {
 		cuentas = new Cuentacorriente[10];
 		String cliente;
 		Double saldo;
-		/* Leer.mostrarEnPantalla(cuentas.toString());
+	/* Leer.mostrarEnPantalla(cuentas.toString());
 		for (int i=0; i<cuentas.length; i++){
 			//Leer.mostrarEnPantalla(""+cuentas[i]);
 			//	Leer.mensaje(cuentas[i].visualiza());
@@ -22,17 +22,17 @@ public class Principal {
 			saldo=Leer.pedirDouble("Saldo inicial ");
 			cuentas[i]=new Cuentacorriente(saldo, cliente);
 		}
-
+		
 		//Leer.mostrarEnPantalla(cuentas.toString());
 		for (int i=0; i<Cuentacorriente.verNumeroDeCuentas(); i++){
-
+			 
 			Leer.mostrarEnPantalla(""+cuentas[i]);
 			/*if (i<Cuentacorriente.getSiguiente()-1){
 				//Leer.mostrarEnPantalla(cuentas[i].visualiza());
 				System.out.println((cuentas[i]));
 			}*/
-
-
+			
+			
 		}
 		//Menu
 		int opcion;
@@ -110,7 +110,7 @@ public class Principal {
 				numeroCuenta=Leer.pedirCadena("Introduce el numero de cuenta");
 				for(int i=0; i<Cuentacorriente.getSiguiente()-1; i++){
 					if( cuentas[i].getCliente().equals(nombre) && cuentas[i].getNumero().equals(numeroCuenta)){
-
+						
 						cuentas[i].cerrarCuenta();
 						existe=true;
 						System.out.println("Cuenta cerrada exitosamente");
@@ -121,18 +121,17 @@ public class Principal {
 				}
 				break;//cerrar una cuenta
 			case 7://fusionar dos cuentas
-				int indice=0, indice2=0;
+				int indice=0;
 				String nombre2;
 				String numeroCuenta2;
 				nombre2=Leer.pedirCadena("Introduce tu nombre");
-				for( ; indice < cuentas.length;indice++){
-					for(indice2=indice+1 ; indice2 < cuentas.length;indice2++){
-						if( cuentas[indice].getCliente().equals(cuentas[indice2].getCliente() ) ){
-							Cuentacorriente.fusiona(cuentas[indice], cuentas[indice2]);
-						}
+				numeroCuenta2=Leer.pedirCadena("Introduce el numero de cuenta");
+				 for( ; indice < Cuentacorriente.getSiguiente()-1;indice++){
+					if( cuentas[indice].getCliente().equals(nombre2) && !cuentas[indice].getNumero().equals(numeroCuenta2)){
+						 
 					}
-				}
-
+				 }
+				
 				break;
 			}
 		}while (opcion!=0);

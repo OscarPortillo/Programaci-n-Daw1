@@ -111,8 +111,6 @@ public class Cuentacorriente {
 		return contaCuentas;
 	}
 	public void cerrarCuenta(){
-		cliente="CERRADA";
-		saldo=0.0;
 		contaCuentas=contaCuentas-1;//le resto uno cada que se ejecuta el metodo
 	}
 	public static Cuentacorriente fusiona( Cuentacorriente cuenta1,Cuentacorriente cuenta2){
