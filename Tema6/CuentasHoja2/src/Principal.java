@@ -121,8 +121,8 @@ public class Principal {
 				}
 				break;//cerrar una cuenta
 			case 7://fusionar dos cuentas
-				int indice, indice2=0;
-				 String nombre2,numero2;
+				@SuppressWarnings("unused") int indice, indice2=0;
+				 @SuppressWarnings("unused") String nombre2,numero2;
 				 Leer.mostrarEnPantalla("INTRODUZCA EL CLIENTE DE LAS CUENTAS QUE DESEA FUSIONAR");
 				 nombre2=Leer.pedirCadena("Introduce tu nombre");
 				for(int i=0; i < Cuentacorriente.getSiguiente()-1; i++){					
