@@ -73,7 +73,8 @@ public class GestionLibroAutor {
 		return autores;
 	}// crearVectorAutores
 
-	public static void crearLibros(Libro[] libros, Autor[] autores) {
+	public static void crearLibros(Libro[] libros, Autor[] autores) {// crearVectorLibros
+		
 		int indLibro, indAutor, indTitulo;
 		String titulo, nombreAutor, email, genero;
 		char letraGenero;
@@ -113,7 +114,8 @@ public class GestionLibroAutor {
 		} // fin for
 	}// crearVectorLibros
 
-	public static Integer buscarTitulo(Libro[] libros, String titulo) {
+	public static Integer buscarTitulo(Libro[] libros, String titulo) {//buscarTitulo
+
 		int i = 0, indiceLibro = -1;
 		// devuelve el indice del elemento donde está ese título
 		// o el valor -1 si no lo encuentra
@@ -124,9 +126,9 @@ public class GestionLibroAutor {
 			i++;
 		}
 		return indiceLibro;
-	}
+	}//buscartitulo
 
-	public static int buscarAutor(Autor[] autores, String nombre) {
+	public static int buscarAutor(Autor[] autores, String nombre) {//buscarAutor
 		// devuelve la posicion del nombre o la del primer elemento libre del vector de autores
 		int i = 0, indiceAutor=0;
 		Boolean encontrado = false;
@@ -141,9 +143,9 @@ public class GestionLibroAutor {
 			indiceAutor = i;
 		}
 		return indiceAutor;
-	}
+	}//buscarAutor 
 
-	public static void listarAutores(Autor[] autores) {
+	public static void listarAutores(Autor[] autores) {//listarAutores
 		int indiceAutor;
 		Leer.mostrarEnPantalla("\nListado de autores");
 		Leer.mostrarEnPantalla("-------------------");
@@ -153,7 +155,7 @@ public class GestionLibroAutor {
 		Leer.mostrarEnPantalla("------------------------------------------------------------------");
 	}//listarAutores
 
-	public static void listarLibros(Libro[] libros) {
+	public static void listarLibros(Libro[] libros) {//listarLibros
 		int indiceLibro;
 		Leer.mostrarEnPantalla("\nListado de libros");
 		Leer.mostrarEnPantalla("------------------");
@@ -163,7 +165,7 @@ public class GestionLibroAutor {
 		Leer.mostrarEnPantalla("------------------------------------------------------------------");
 	}//listarLibros
 
-	public static void modificarAutor(Autor [] autores, String nombre){
+	public static void modificarAutor(Autor [] autores, String nombre){//modificarAutor
 		Integer indiceAutor;
 		String email;
 		
@@ -177,7 +179,7 @@ public class GestionLibroAutor {
 		}
 	}//modificarAutor
 
-	public static void modificarLibro(Libro [] libros, String titulo){
+	public static void modificarLibro(Libro [] libros, String titulo){//modificarLibro
 		//solo podemos modificar el precio y la cantidad
 		Integer indiceLibro, opcion;
 		Double precio;
@@ -189,7 +191,7 @@ public class GestionLibroAutor {
 				Leer.mostrarEnPantalla("1. Modificar precio");
 				Leer.mostrarEnPantalla("2. Modificar cantidad");
 				opcion = Leer.pedirEntero("Elija opcion:");
-			} while (opcion < 1 || opcion > 2);
+			} while (opcion < 1 || opcion > 2);// 
 			if(opcion == 1){
 				precio = Leer.pedirDouble("Nuevo precio?");
 				libros[indiceLibro].setPrecio(precio);
@@ -199,6 +201,6 @@ public class GestionLibroAutor {
 			}
 		}else{// el libro NO existe
 			Leer.mostrarEnPantalla("No existe ese titulo");
-		}
+		}//el libro no existe
 	}//modificarLibro
 }// class

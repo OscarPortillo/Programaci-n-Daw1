@@ -111,13 +111,13 @@ public class Cuentacorriente {
 		return contaCuentas;
 	}
 	public void cerrarCuenta(){
-		cliente="CERRADA";
+		cliente= cliente + " CERRADA";
 		saldo=0.0;
 		contaCuentas=contaCuentas-1;//le resto uno cada que se ejecuta el metodo
 	}
 	public static Cuentacorriente fusiona( Cuentacorriente cuenta1,Cuentacorriente cuenta2){
 		Cuentacorriente cuenta= null;
-		if(cuenta1.cliente.equals(cuenta2.cliente) && !cuenta1.numero.equals(cuenta2)){			
+		if(cuenta1.cliente.equals(cuenta2.cliente) && !cuenta1.numero.equals(cuenta2.numero)){			
 			cuenta= new Cuentacorriente(cuenta1.saldo+cuenta2.saldo,cuenta1.cliente);
 			cuenta1.cerrarCuenta();
 			cuenta2.cerrarCuenta();

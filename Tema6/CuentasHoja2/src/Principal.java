@@ -121,20 +121,50 @@ public class Principal {
 				}
 				break;//cerrar una cuenta
 			case 7://fusionar dos cuentas
-				@SuppressWarnings("unused") int indice, indice2=0;
-				 @SuppressWarnings("unused") String nombre2,numero2;
-				 Leer.mostrarEnPantalla("INTRODUZCA EL CLIENTE DE LAS CUENTAS QUE DESEA FUSIONAR");
-				 nombre2=Leer.pedirCadena("Introduce tu nombre");
-				for(int i=0; i < Cuentacorriente.getSiguiente()-1; i++){					
-					
-					numero2=Leer.pedirCadena("Introduzca el numero de cuenta");
-					if(cuentas[i].getCliente().equals(cuentas[i].getCliente()) && !cuentas[i].getNumero().equals(cuentas[i].getNumero())){
-						System.out.println(Cuentacorriente.fusiona(cuentas[i], cuentas[i]));
-					}//if
-				}//for
+			  @SuppressWarnings("unused") int indice, indice2=0;
+				Integer indiceCuenta1, indiceCuenta2;
+				String numero1,numero2;
+				if(Cuentacorriente.getSiguiente()==11){
+					Leer.mostrarEnPantalla("Límite de cuentas alcanzado");
+				}else{
+					Leer.mostrarEnPantalla("INTRODUZCA EL CLIENTE DE LAS CUENTAS QUE DESEA FUSIONAR");
+					do{
+						numero1=Leer.pedirCadena("Introduce un numero de cuenta");
+						indiceCuenta1 = buscarCuenta(numero1,cuentas);
+					}while(indiceCuenta1==-1);
+					do{
+						numero2=Leer.pedirCadena("Introduce un numero de cuenta");
+						indiceCuenta2 = buscarCuenta(numero2,cuentas);
+					}while(indiceCuenta2==-1);
+
+					String respuesta="";
+					do{
+						respuesta=Leer.pedirCadena("Seguro que quiere fusionar las 2 cuentas?(s/n)");
+					}while(!respuesta.equalsIgnoreCase("S") && !respuesta.equalsIgnoreCase("N"));
+					if(respuesta.equalsIgnoreCase("S")){
+						cuentas[Cuentacorriente.getSiguiente()]=
+								Cuentacorriente.fusiona(cuentas[indiceCuenta1], cuentas[indiceCuenta2]);
+					}	
+				}
 				break;
 			}
 		}while (opcion!=0);
 	}//main
 
+	public static Integer buscarCuenta(String numero,Cuentacorriente[] cuentas){//metodo buscar numero cuentas
+		Integer indiceCuenta=0;
+		Boolean encontrado=false;
+		while(indiceCuenta < Cuentacorriente.getSiguiente()-1 && !encontrado){//mientras que indiceCuenta sea menor que el siguiente numero de cuentas -1 y encontrado sea falso
+			if(cuentas[indiceCuenta].getNumero().equals(numero)){
+				encontrado=true;
+			}
+			indiceCuenta++;
+		}
+		if(encontrado==true){
+			indiceCuenta=indiceCuenta-1;//si no lo encuentra devolverá -1
+		}else{
+			indiceCuenta=-1;
+		}
+		return indiceCuenta;
+	}// metodo buscar numero de cuentas
 }//class
