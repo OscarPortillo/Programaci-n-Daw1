@@ -1,0 +1,28 @@
+ 
+public class Principal {
+
+	public static void main(String[] args) {
+		int opc;
+		do{
+			menu();
+			opc=Leer.pedirEntero("Elija una opcion");
+			switch(opc){
+			case 1:
+				
+				break;
+			}
+		}while(opc!=0);
+		
+		
+	}//main
+	public static  void menu (){
+		System.out.println("1 - Crear libros");
+		System.out.println("2 - Modificar Autor");
+		System.out.println("3 - Modificar libro");
+		System.out.println("4 - Listado de libros");
+		System.out.println("5 - Listado de autores");
+		System.out.println("0 - Salir");
+		
+	}
+
+}//class

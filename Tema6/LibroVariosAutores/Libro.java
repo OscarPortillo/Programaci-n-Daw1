@@ -21,12 +21,13 @@ public class Libro {
 	public String cadenaLibro() {
 		int indiceAutor;
 		String cadena = "Libro [titulo = " + titulo + ",\n";
-		String stringAutores = "{ ";
+		String stringAutores = " { ";
 		for(indiceAutor = 0; indiceAutor < autores.length; indiceAutor++){
-			stringAutores = stringAutores + autores[indiceAutor].cadenaAutor() + ", ";
+			;
+			stringAutores = stringAutores + autores[indiceAutor].cadenaAutor() + ",\n ";
 		}
 		stringAutores = stringAutores + "}";
-		cadena = cadena + stringAutores + "\nprecio = " + precio + "\ncantidad = "	+ cantidad + "]";
+		cadena = cadena + stringAutores + "\n Precio = " + precio + "\n Cantidad = "	+ cantidad + "]";
 		return cadena;
 	}
 

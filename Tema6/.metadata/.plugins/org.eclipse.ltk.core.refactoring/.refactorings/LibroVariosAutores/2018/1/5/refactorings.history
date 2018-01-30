@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Leer.java&apos; to &apos;Hoja_2_Libros_Oscar/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;LibroVariosAutores&apos;&#x0D;&#x0A;- Destination element: &apos;Hoja_2_Libros_Oscar/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;Leer.java&apos;" description="Copy compilation unit" destination="=Hoja_2_Libros_Oscar/src&lt;" element1="/&lt;{Leer.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1517333244496" units="1" version="1.0"/>
+</session>

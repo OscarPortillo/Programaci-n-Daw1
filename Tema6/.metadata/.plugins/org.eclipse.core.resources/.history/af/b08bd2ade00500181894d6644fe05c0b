@@ -1,0 +1,7 @@
+
+public class Autor {
+	private String nombre;
+	private String correo;
+	private char genero;
+
+}

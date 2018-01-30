@@ -110,7 +110,6 @@ public class Principal {
 				numeroCuenta=Leer.pedirCadena("Introduce el numero de cuenta");
 				for(int i=0; i<Cuentacorriente.getSiguiente()-1; i++){
 					if( cuentas[i].getCliente().equals(nombre) && cuentas[i].getNumero().equals(numeroCuenta)){
-
 						cuentas[i].cerrarCuenta();
 						existe=true;
 						System.out.println("Cuenta cerrada exitosamente");
@@ -120,8 +119,9 @@ public class Principal {
 					Leer.mostrarEnPantalla("Cuenta no existente "+nombre+" ó el "+numeroCuenta+" numero de cuenta es incorrecto");
 				}
 				break;//cerrar una cuenta
+				
 			case 7://fusionar dos cuentas
-			  @SuppressWarnings("unused") int indice, indice2=0;
+				@SuppressWarnings("unused") int indice, indice2=0;
 				Integer indiceCuenta1, indiceCuenta2;
 				String numero1,numero2;
 				if(Cuentacorriente.getSiguiente()==11){
@@ -154,7 +154,7 @@ public class Principal {
 	public static Integer buscarCuenta(String numero,Cuentacorriente[] cuentas){//metodo buscar numero cuentas
 		Integer indiceCuenta=0;
 		Boolean encontrado=false;
-		while(indiceCuenta < Cuentacorriente.getSiguiente()-1 && !encontrado){//mientras que indiceCuenta sea menor que el siguiente numero de cuentas -1 y encontrado sea falso
+		while(indiceCuenta < Cuentacorriente.getSiguiente()-1 && !encontrado){//mientras que indiceCuenta sea menor que el siguiente numero de cuentas -1 y encontrado sea 
 			if(cuentas[indiceCuenta].getNumero().equals(numero)){
 				encontrado=true;
 			}
