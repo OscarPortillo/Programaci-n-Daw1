@@ -59,7 +59,8 @@ public class Principal {
 							autores[indice].setCorreo(nuevoCorreo);
 						}
 						if(opc==3){
-							nuevoGeneroString=Leer.pedirCadena("Introduce el nuevo genero");
+							System.out.println("Introduzca el nuevo genero");
+							Leer.pedirChar(nuevoGeneroString);
 							nuevoGenero=nuevoGeneroString.charAt(0);
 							autores[indice].setGenero(nuevoGenero);
 						}

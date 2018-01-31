@@ -118,5 +118,9 @@ public class Leer {
 		return dato;
 
 	}
-	
+	public static char pedirChar(String letra){
+		char caracter = 0;
+		
+		return caracter;
+	}
 }

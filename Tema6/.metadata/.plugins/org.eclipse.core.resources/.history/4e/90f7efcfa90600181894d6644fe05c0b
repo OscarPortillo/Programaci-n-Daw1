@@ -27,7 +27,8 @@ public class Principal {
 					for(int k=0;k<numAutor;k++){
 						nombre=Leer.pedirCadena("Introduzca el nombre del autor");
 						correo=Leer.pedirCadena("Introduzca el correo del autor");
-						genero=Leer.pedirCadena("Introduzca el nombre del autor Hombre (H) Mujer (M)");
+						Leer.mostrarEnPantalla("Introduzca el nombre del autor Hombre (H) Mujer (M)");
+						Leer.pedirChar(genero);
 						autores[k]=new Autor(nombre,correo,genero);
 					}
 					precio=Leer.pedirDouble("Introcuzca el precio del libro");
@@ -59,7 +60,8 @@ public class Principal {
 							autores[indice].setCorreo(nuevoCorreo);
 						}
 						if(opc==3){
-							nuevoGeneroString=Leer.pedirCadena("Introduce el nuevo genero");
+							System.out.println("Introduzca el nuevo genero");
+							Leer.pedirChar(nuevoGeneroString);
 							nuevoGenero=nuevoGeneroString.charAt(0);
 							autores[indice].setGenero(nuevoGenero);
 						}

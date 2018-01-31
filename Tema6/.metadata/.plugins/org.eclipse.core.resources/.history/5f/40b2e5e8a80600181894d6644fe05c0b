@@ -17,7 +17,7 @@ public class Principal {
 				double precio;
 				int cantidad;
 				int numAutor;
-				String nombre,correo,genero = null;
+				String nombre,correo,genero;
 				numLibros=Leer.pedirEntero("Cuantos libros quieres crear ?.");
 				libros=new Libro[numLibros];
 				numAutor=Leer.pedirEntero("Cuantos autores tendra el libro");
@@ -28,6 +28,7 @@ public class Principal {
 						nombre=Leer.pedirCadena("Introduzca el nombre del autor");
 						correo=Leer.pedirCadena("Introduzca el correo del autor");
 						genero=Leer.pedirCadena("Introduzca el nombre del autor Hombre (H) Mujer (M)");
+						validarGenero(genero);
 						autores[k]=new Autor(nombre,correo,genero);
 					}
 					precio=Leer.pedirDouble("Introcuzca el precio del libro");
@@ -59,8 +60,10 @@ public class Principal {
 							autores[indice].setCorreo(nuevoCorreo);
 						}
 						if(opc==3){
-							nuevoGeneroString=Leer.pedirCadena("Introduce el nuevo genero");
-							nuevoGenero=nuevoGeneroString.charAt(0);
+							System.out.println("Introduzca el nuevo genero");
+							nuevoGenero=t.nextLine().charAt(0);
+							nuevoGeneroString += nuevoGenero;
+							validarGenero(nuevoGeneroString);
 							autores[indice].setGenero(nuevoGenero);
 						}
 					}else{
@@ -94,12 +97,15 @@ public class Principal {
 		System.out.println("2 - Modificar el correo del autor");
 		System.out.println("3 - Modificar el genero del autor/a");
 	}
-	/*public static String validarGenero(String caracter){
-		char letra=0;
+	public static String validarGenero(String caracter){
+		char letra=caracter.charAt(0);
+		String letraAux="";
 		if(!caracter.equalsIgnoreCase("H") || !caracter.equalsIgnoreCase("M")){
-			caracter=Leer.pedirCadena("ELIGE H Ó M");
+			System.out.println("Elige H ó M");
+		}else{
+			letraAux+=letra;
 		}
-		return caracter;
-	}*/
+		return letraAux;
+	}
 	
 }//class
