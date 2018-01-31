@@ -16,7 +16,8 @@ public class Principal {
 				String titulo;
 				double precio;
 				int cantidad;
-				int numAutor;
+				int numAutor,contaErrores=0;
+
 				String nombre,correo,genero = null;
 				numLibros=Leer.pedirEntero("Cuantos libros quieres crear ?.");
 				libros=new Libro[numLibros];
@@ -27,12 +28,15 @@ public class Principal {
 					for(int k=0;k<numAutor;k++){
 						nombre=Leer.pedirCadena("Introduzca el nombre del autor");
 						correo=Leer.pedirCadena("Introduzca el correo del autor");
-						genero=Leer.pedirCadena("Introduzca el nombre del autor Hombre (H) Mujer (M)");
+						do{
+							genero=Leer.pedirCadena("Introduzca el genero del autor Hombre (H) Mujer (M)");
+						}while(validarGenero(genero)==false);
+
 						autores[k]=new Autor(nombre,correo,genero);
+						precio=Leer.pedirDouble("Introcuzca el precio del libro");
+						cantidad=Leer.pedirEntero("Cuantos libros de estos tendrá");
+						libros[indice]=new Libro(titulo,autores,precio,cantidad);
 					}
-					precio=Leer.pedirDouble("Introcuzca el precio del libro");
-					cantidad=Leer.pedirEntero("Cuantos libros de estos tendrá");
-					libros[indice]=new Libro(titulo,autores,precio,cantidad);
 				}
 
 				break;
@@ -59,8 +63,10 @@ public class Principal {
 							autores[indice].setCorreo(nuevoCorreo);
 						}
 						if(opc==3){
-							nuevoGeneroString=Leer.pedirCadena("Introduce el nuevo genero");
-							nuevoGenero=nuevoGeneroString.charAt(0);
+							do{
+								nuevoGeneroString=Leer.pedirCadena("Introduzca el nuevo genero del autor Hombre (H) Mujer (M)");
+								nuevoGenero=nuevoGeneroString.charAt(0);
+							}while(validarGenero(nuevoGeneroString)==false);
 							autores[indice].setGenero(nuevoGenero);
 						}
 					}else{
@@ -94,12 +100,22 @@ public class Principal {
 		System.out.println("2 - Modificar el correo del autor");
 		System.out.println("3 - Modificar el genero del autor/a");
 	}
-	/*public static String validarGenero(String caracter){
-		char letra=0;
-		if(!caracter.equalsIgnoreCase("H") || !caracter.equalsIgnoreCase("M")){
-			caracter=Leer.pedirCadena("ELIGE H Ó M");
+	public static boolean validarGenero(String caracter){
+
+		boolean correcto=false;
+		int contador=0;
+		if(caracter.equalsIgnoreCase("M") || caracter.equalsIgnoreCase("H")){ // letra.equalsIgnoreCase("H")){
+
+		}else{
+			contador++;
+			Leer.mostrarEnPantalla("Elije M ó H");
 		}
-		return caracter;
-	}*/
-	
+		if(contador==0){
+			correcto=true;
+		}else{
+			correcto=false;
+		}
+
+		return correcto;
+	}
 }//class

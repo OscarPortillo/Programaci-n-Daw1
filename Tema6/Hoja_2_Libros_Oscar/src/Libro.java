@@ -19,14 +19,14 @@ public class Libro {
 	}
 	public String cadenaLibro (){
 		int indice;
-		String cadena="[ titulo = "+titulo+"\n";
+		String cadena="\n[ titulo = "+titulo+"\n";
 		String stringAutores = " [ ";
 		for(indice=0; indice < autor.length; indice++){
 			stringAutores=stringAutores+autor[indice].cadenaAutor();
 			
 		}
 		stringAutores=stringAutores+" ] ";
-		cadena=cadena+stringAutores+"\n Precio"+precio+"\n Cantidad"+cantidad;
+		cadena=cadena+stringAutores+"\n Precio "+precio+"\n Cantidad "+cantidad+"\n";
 		
 		return cadena;
 	}
