@@ -1,0 +1,22 @@
+
+public class Jefe extends Empleado {
+	private String titulo;
+	private int añoExperiencia;
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public int getAñoExperiencia() {
+		return añoExperiencia;
+	}
+	public void setAñoExperiencia(int añoExperiencia) {
+		this.añoExperiencia = añoExperiencia;
+	}
+	public Jefe(String nombre, String apellido,double sueldo) {
+		super(nombre, apellido, sueldo);
+		
+	}//constructor heredado
+
+}//class

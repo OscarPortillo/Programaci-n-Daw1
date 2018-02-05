@@ -1,0 +1,9 @@
+
+public class Jefe extends Empleado {
+	
+	public Jefe(String nombre, String apellido,double sueldo) {
+		super(nombre, apellido, sueldo);
+		
+	}//constructor heredado
+
+}//class
