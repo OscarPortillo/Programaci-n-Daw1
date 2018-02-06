@@ -1,0 +1,30 @@
+
+public class Jefe extends Empleado {
+	private String titulo;
+	private int añoExperiencia;
+	private static Integer contador=0;
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public int getAñoExperiencia() {
+		return añoExperiencia;
+	}
+	public void setAñoExperiencia(int añoExperiencia) {
+		this.añoExperiencia = añoExperiencia;
+	}
+	
+	public Jefe(String nombre, String apellido, double sueldo, String titulo, int añoExperiencia) {
+		super(nombre, apellido, sueldo);
+		this.titulo = titulo;
+		this.añoExperiencia = añoExperiencia;
+		contador++;
+	}
+	public void verInfoJefe(){
+		super.verInfoEmple();
+		System.out.println("\t\n Titulo: "+titulo);
+		System.out.println("\t\n Años de experiencia: "+añoExperiencia);
+	}
+}//class

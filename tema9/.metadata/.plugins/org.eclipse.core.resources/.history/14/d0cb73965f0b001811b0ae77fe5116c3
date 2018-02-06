@@ -1,0 +1,27 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Empleado emple[];
+		Jefe jefe[];
+		int numEmple,numJefe;
+		String nombre,apellido,titulo;
+		double sueldo;
+
+		
+		numEmple=Leer.pedirEntero("Cuantos Empleados quiere crear?");
+		numJefe=Leer.pedirEntero("Cuantos Jefes quiere crear");
+		emple=new Empleado[numEmple];
+		jefe=new Jefe[numJefe];
+		for(int i=0;i<emple.length;i++){
+			nombre=Leer.pedirCadena("Introduzca el nombre del empleado");
+			apellido=Leer.pedirCadena("Introduzca el apellido del empleado");
+			sueldo=Leer.pedirDouble("Introduce el sueldo del empleado");
+			emple[i]=new Empleado(nombre,apellido,sueldo);
+		}
+		for(int k=0;k<emple.length;k++){
+			emple[k].verInfoEmple();
+		}
+	}//main
+
+}//class
