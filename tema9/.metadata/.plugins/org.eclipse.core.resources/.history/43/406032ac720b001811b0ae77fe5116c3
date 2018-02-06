@@ -1,0 +1,17 @@
+
+public class Empleado {
+	private String nombre;
+	private String nombreEmpresa;
+	private int edad;
+	private double sueldoBase;
+	private int porcentaje;
+	public Empleado(String nombre, String nombreEmpresa, int edad, double sueldoBase, int porcentaje) {
+		super();
+		this.nombre = nombre;
+		this.nombreEmpresa = nombreEmpresa;
+		this.edad = edad;
+		this.sueldoBase = sueldoBase;
+		this.porcentaje = porcentaje;
+	}
+	
+}

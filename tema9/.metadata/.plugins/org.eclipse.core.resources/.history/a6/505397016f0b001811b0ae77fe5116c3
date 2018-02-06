@@ -1,0 +1,8 @@
+package Visibilidad1;
+public class Jefe extends Empleado{
+	public Jefe(){
+		super.edad=2;// se puede acceder desde cualquier otra
+		super.nombre="emple";//se puede por que esta en el mismo paquete
+		super.direccion="Avd Navarra";//esta en el mismo paquete
+	}
+}

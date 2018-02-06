@@ -4,4 +4,5 @@ public class EmpleadoEspecial{
 	private float sueldoEs;
 	protected String direccionEs;
 	int edad;
+	
 }
