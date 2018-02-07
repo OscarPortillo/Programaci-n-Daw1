@@ -1,0 +1,7 @@
+
+public class Jefe {
+	private double plus;
+	private String nombreDepart;
+	
+	
+}

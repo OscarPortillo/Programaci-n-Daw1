@@ -1,0 +1,7 @@
+
+public class Jefe extends Empleado{
+	private double plus;
+	private String nombreDepart;
+	
+	
+}

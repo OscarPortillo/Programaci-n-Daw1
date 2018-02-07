@@ -8,7 +8,6 @@ public class Empleado {
 
 	
 	public Empleado(String nombre, String nombreEmpresa, int edad, double sueldoBase, int porcentaje) {
-		super();
 		this.nombre = nombre;
 		this.nombreEmpresa = nombreEmpresa;
 		this.edad = edad;
@@ -21,8 +20,13 @@ public class Empleado {
 		System.out.println("Nombre: "+nombre);
 		System.out.println("Edad: "+edad);
 		System.out.println("Sueldo Base: "+sueldoBase);
-		System.out.println("           ");
+		System.out.println("Aumento: "+porcentaje);
 		return;
+	}
+	public double sueldoTotalEmpleado(){
+		double sueldo;
+		sueldo=sueldoBase+porcentaje;
+		return sueldo;
 	}
 	public String getNombre() {
 		return nombre;
@@ -32,9 +36,6 @@ public class Empleado {
 	}
 	public String getNombreEmpresa() {
 		return nombreEmpresa;
-	}
-	public void setNombreEmpresa(String nombreEmpresa) {
-		this.nombreEmpresa = nombreEmpresa;
 	}
 	public int getEdad() {
 		return edad;

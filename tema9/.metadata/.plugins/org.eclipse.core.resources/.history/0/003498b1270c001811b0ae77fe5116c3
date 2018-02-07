@@ -1,0 +1,24 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		int edad,porcentaje,plus,numEmple,numJefe;
+		String nombreEmple,nombreEmpresa;
+		double sueldo;
+		Empleado emple[];
+		Jefe jefe[];
+		nombreEmpresa="Eléctrica, SA";
+		Leer.mostrarEnPantalla("Los empleados trabajan en: "+nombreEmpresa);
+		numEmple=Leer.pedirEntero("Cuantos empleados quiere crear");
+		numJefe=Leer.pedirEntero("Cuantos jefes quiere crear");
+		emple=new Empleado[numEmple];
+		jefe=new Jefe[numJefe];
+		for(int i=0;i<emple.length;i++){
+			
+		}
+		for(int i=0;i<jefe.length;i++){
+
+		}
+	}//main
+
+}//class
