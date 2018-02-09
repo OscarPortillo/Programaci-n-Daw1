@@ -1,0 +1,9 @@
+
+public class hijaDe6 extends Ejercicio6 {
+
+	//public abstract void metodoAbst();
+	/*
+	 * para tener un metodo abstracto la clase debe
+	 * ser abstracta
+	 */
+}

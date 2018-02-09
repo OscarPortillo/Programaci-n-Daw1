@@ -1,0 +1,8 @@
+
+public abstract class Ejercicio6 {
+	public void metodo(){
+		System.out.println("Ahora no joven, estoy programando");
+	}
+	public abstract void metodoAbs();
+	
+}

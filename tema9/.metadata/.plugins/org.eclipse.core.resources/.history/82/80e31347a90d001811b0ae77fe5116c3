@@ -1,0 +1,10 @@
+
+public class ClaseNieta extends hijaDe6{
+	private String nombre;
+
+	public ClaseNieta(String nombre) {
+		super();
+		this.nombre = nombre;
+	}
+	
+}

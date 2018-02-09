@@ -52,10 +52,12 @@ public class Principal {
 				break;
 			case 3:
 				for(int i=0;i<emple.length;i++){
+					System.out.println("INFORMACION DEL EMPLEADO "+(i+1));
 					emple[i].infoEmpleado();
 					System.out.println("Sueldo total: "+emple[i].sueldoTotalEmpleado());
 				}
 				for(int i=0;i<jefe.length;i++){
+					System.out.println("INFORMACION DEL JEFE "+(i+1));
 					jefe[i].infoJefe();
 					System.out.println("Sueldo total: "+jefe[i].sueldoTotalJefe());
 				}

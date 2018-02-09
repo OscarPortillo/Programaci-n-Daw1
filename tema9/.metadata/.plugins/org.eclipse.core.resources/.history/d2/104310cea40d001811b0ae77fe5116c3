@@ -1,0 +1,16 @@
+
+public class Herencia extends Ejercicio6{
+
+	@Override
+	public void metodoAbs() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void metodoAbs1() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

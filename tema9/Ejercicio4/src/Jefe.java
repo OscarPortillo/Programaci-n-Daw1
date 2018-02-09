@@ -16,7 +16,6 @@ public class Jefe extends Empleado{
 		
 	}
 	public double sueldoTotalJefe(){
-		@SuppressWarnings("unused")
 		double sueldoTotalJefe;
 		sueldoTotalJefe=super.sueldoTotalEmpleado()+plus;
 		return sueldoTotalJefe;
