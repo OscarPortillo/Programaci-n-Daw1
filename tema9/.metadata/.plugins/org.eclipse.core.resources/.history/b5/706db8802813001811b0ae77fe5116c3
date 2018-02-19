@@ -1,0 +1,10 @@
+
+public class Administrativo extends Empleados{
+	private String estudios;
+	private Integer numOrdenador;
+	public Administrativo(String nombre, Integer edad) {
+		super(nombre, edad);
+		
+	}
+
+}

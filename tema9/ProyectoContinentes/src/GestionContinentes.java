@@ -2,23 +2,26 @@
 public class GestionContinentes {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		ListaDePaises[] listaContinentes;
 		listaContinentes = new ListaDePaises[5];
+		@SuppressWarnings("unused")
 		String[] nomContinentes = new String[5];
 		Integer opcion;
+		@SuppressWarnings("unused")
 		String nombre;
 		menuPaises();
 		opcion = Leer.pedirEntero("Elija opcion:");
 
 		while (opcion != 0) {
-			gestionPaises(opcion, listaContinentes, nomContinentes);
+			//gestionPaises(opcion, listaContinentes, nomContinentes);
 			menuPaises();
 			opcion = Leer.pedirEntero("Elija opcion:");
 
 		}
 
 	}// main
-
+/*
 	public static void gestionPaises(Integer opcion, ListaDePaises [] listaContinentes, String [] nomContinentes){
 		while (opcion != 0) {
 			switch (opcion) {
@@ -50,7 +53,7 @@ public class GestionContinentes {
 			opcion = Leer.pedirEntero("Elija opcion:");
 		}
 	}//gestionPaises
-
+*/
 	public static void menuPaises() {
 		Leer.mostrarEnPantalla("1- Crear lista");
 		Leer.mostrarEnPantalla("2- Añadir un nombre");

@@ -1,0 +1,15 @@
+
+public class Cliente implements Persona{
+	private String nombre;
+	@Override
+	public void pedirTodosDatos() {		 
+		nombre=Leer.
+	}
+
+	@Override
+	public void visualizarTodosDatos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

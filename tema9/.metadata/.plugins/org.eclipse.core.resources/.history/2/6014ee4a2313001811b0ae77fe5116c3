@@ -1,0 +1,13 @@
+//import java.util.Random;
+
+public class Principal {
+	public static void main(String[] args) {
+		//Random azar=new Random();
+		Cliente cli=new Cliente();
+		cli.pedirTodosDatos();		
+		cli.visualizarTodosDatos();
+		Empleado emp=new Empleado();
+		emp.pedirTodosDatos();
+		emp.visualizarTodosDatos(); 
+	}//main
+}//class 

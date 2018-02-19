@@ -1,0 +1,13 @@
+import java.util.Random;
+
+public class Principal {
+	public static void main(String[] args) {
+		Random azar=new Random();
+		int p;
+		String palabra[]={"hola","lol","bruhh","pila","guao","no mames"};
+	for(int i=0;i<palabra.length;i++){
+		p=azar.nextInt(palabra.length);
+		System.out.println(p);
+	}
+	}
+}

@@ -1,0 +1,13 @@
+
+public class Maquinista extends Empleados{
+	@SuppressWarnings("unused")
+	private Integer numMaquina;
+	@SuppressWarnings("unused")
+	private Integer numAños;
+	public Maquinista(String nombre, Integer edad, Integer numMaquina, Integer numAños) {
+		super(nombre, edad);
+		this.numMaquina = numMaquina;
+		this.numAños = numAños;
+	}
+	
+}
