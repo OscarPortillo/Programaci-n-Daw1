@@ -1,0 +1,15 @@
+
+public class Automovil {
+	private String marca;
+	private String modelo;
+	private String cilindrada;
+	private String precio;
+	public Automovil(String marca, String modelo, String cilindrada, String precio) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.cilindrada = cilindrada;
+		this.precio = precio;
+	}
+	
+	
+}

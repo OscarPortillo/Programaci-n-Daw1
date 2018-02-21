@@ -1,6 +1,0 @@
-package Visibilidad1;
-public class Jefe extends Empleado{
-	public Jefe(){
-		super.edad();
-	}
-}

@@ -1,9 +1,0 @@
-
-public class Empleado {
-	private String nombre;
-	private String nombreEmpresa;
-	private int edad;
-	private double sueldoBase;
-	private int porcentaje;
-	
-}

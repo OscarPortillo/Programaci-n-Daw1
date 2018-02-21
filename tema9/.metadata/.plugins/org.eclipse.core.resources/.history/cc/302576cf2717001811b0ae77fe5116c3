@@ -1,0 +1,9 @@
+
+public class Automovil {
+	private String marca;
+	private String modelo;
+	private String cilindrada;
+	private String precio;
+	
+	
+}

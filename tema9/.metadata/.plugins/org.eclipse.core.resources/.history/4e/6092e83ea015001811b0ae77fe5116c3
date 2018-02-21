@@ -1,0 +1,15 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Integer cuantos;
+		String nombre, dueño, color, raza;
+		Animal animal1[];
+		cuantos=Leer.pedirEntero("¿Cuantos animales quieres crear?");
+		animal1 = new Animal [cuantos];
+		nombre=Leer.pedirCadena("¿Cuantos animales quieres crear?");
+		
+		
+	}
+
+}

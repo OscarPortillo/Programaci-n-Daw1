@@ -1,9 +1,0 @@
-
-public class PruebaJNoAbstracta {
-
-	//public abstract void metodoAbst();
-	/*
-	 * para tener un metodo abstracto la clase debe
-	 * ser abstracta
-	 */
-}

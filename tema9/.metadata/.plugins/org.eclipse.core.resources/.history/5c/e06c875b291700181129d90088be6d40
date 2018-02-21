@@ -1,0 +1,27 @@
+
+public class Principal {
+	/**
+	 * Sea la clase Automovil que tiene los siguiente atributos:
+		marca (string)
+		modelo (string)
+		cilindrada (Integer)
+		precio (Integer)
+		Realizar un programa que utilice un vector de 5000 automóviles (objetos), implementando las siguientes funciones:
+		 Generar n automóviles aleatoriamente pasándole como parámetros el vector y un tamaño n menor que
+		5000
+		 Ordenar los objetos del vector que se le pasa como parámetro, junto con el atributo por el que queremos
+		ordenar.
+		 Imprimir los datos de los automóviles existentes en nuestro vector, pero paginando la salida de x en x líneas,
+		es decir, cada x objetos se para el listado y nos pide: "pulsa enter para continuar"; x lo sumnistra el usuario
+	 * @param args
+	 */
+
+	public static void main(String[] args) {
+		String marca[]={"Opel", "Ford", "Chevrolet", "Nissan", "Jaguar", "Renault", "Audi", "BMW", "Toyota", "Suzuki", "Citroen","Mini", 
+				"Jeep", "Mazda", "Mercedes", "Mitsubishi"};
+		
+	}//main
+	
+	
+
+}//class
