@@ -1,0 +1,9 @@
+import java.util.Comparator;
+
+public class CompararPrecio implements Comparator <Automovil>{
+	
+	public int compare(Automovil a1, Automovil a2){
+		return a1.getPrecio()-a2.getPrecio();
+	}
+
+}

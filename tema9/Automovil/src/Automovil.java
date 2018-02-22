@@ -35,12 +35,8 @@ public class Automovil {
 		this.precio = precio;
 	}
 	public void verCoche(){
-		System.out.println("------------------------------------");
-		Leer.mostrarEnPantalla("Marca: "+marca);
-		Leer.mostrarEnPantalla("Modelo: "+modelo);
-		Leer.mostrarEnPantalla("Cilindrada: "+cilindrada);
-		Leer.mostrarEnPantalla("Precio: "+precio);
-		System.out.println();
+		//System.out.printf("Marca: "+marca+" Modelo: "+modelo+" Cilindrada: "+cilindrada+" Precio: "+precio);
+		Leer.mostrarEnPantalla(marca+" "+modelo+" "+cilindrada+" "+precio);
 	}
 	
 }
