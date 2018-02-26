@@ -92,6 +92,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		Random azar = new Random();
+		@SuppressWarnings("resource")
 		Scanner teclado= new Scanner(System.in);
 		String marcas[]={"Opel", "Ford", "Chevrolet", "Nissan", "Jaguar", "Renault", "Audi", "BMW", "Toyota", "Suzuki", "Citroen","Mini", "Jeep", "Mazda", "Mercedes", "Mitsubishi"};
 		String modelos[]={"Modelo1", "Modelo2", "Modelo3", "Modelo4"};

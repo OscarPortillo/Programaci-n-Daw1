@@ -1,8 +1,6 @@
 
 public class Empleados {
-	@SuppressWarnings("unused")
 	private String nombre;
-	@SuppressWarnings("unused")
 	private double sueldo;
 	@SuppressWarnings("unused")
 	private Integer edad;

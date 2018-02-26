@@ -1,5 +1,6 @@
 import utilidades.Leer;
 
+@SuppressWarnings("unused")
 public class Jefe extends Empleado {
 	private String departJefe;
 

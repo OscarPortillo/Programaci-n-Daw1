@@ -58,19 +58,39 @@ public class Principal {
 				case 1:
 					Leer.mostrarEnPantalla("Ordenado por marca");
 					Arrays.sort(coche, new CompararMarca());
+					System.out.println();
+					for(int i=0;i<numAle;i++){
+						//Leer.mostrarEnPantalla("Coche numero: "+(i+1));
+						coche [i].verCoche();
+					}
 					break;
 				case 2:
 					Leer.mostrarEnPantalla("Ordenado por modelo");
 					Arrays.sort(coche, new CompararModelo());
 					//ordModelo(coche,numAle);
+					System.out.println();
+					for(int i=0;i<numAle;i++){
+						//Leer.mostrarEnPantalla("Coche numero: "+(i+1));
+						coche [i].verCoche();
+					}
 					break;
 				case 3:
 					Leer.mostrarEnPantalla("Ordenado por precio");
 					Arrays.sort(coche, new CompararPrecio());
+					System.out.println();
+					for(int i=0;i<numAle;i++){
+						//Leer.mostrarEnPantalla("Coche numero: "+(i+1));
+						coche [i].verCoche();
+					}
 					break;
 				case 4:
 					Leer.mostrarEnPantalla("Ordenado por clindrada");
 					Arrays.sort(coche, new ComparatorCilindrada());
+					System.out.println();
+					for(int i=0;i<numAle;i++){
+						//Leer.mostrarEnPantalla("Coche numero: "+(i+1));
+						coche [i].verCoche();
+					}
 					break;
 
 				default:
@@ -90,9 +110,7 @@ public class Principal {
 
 
 	}//main
-
-
-	public static void ordMarca(Automovil A[], int numAle){//pasamos el vector de objetos Automovil y el número aleatorio 
+	/*public static void ordMarca(Automovil A[], int numAle){//pasamos el vector de objetos Automovil y el número aleatorio 
 		int numSalto, j;
 		Automovil posAux;
 		boolean cambios;
@@ -111,7 +129,9 @@ public class Principal {
 		}//1 for
 	}
 	public static void ordModelo(Automovil A[],int numAle){
+		@SuppressWarnings("unused")
 		boolean cambio=false;Automovil aux;
+		
 		while(true){
 			for(int i=1;i<numAle;i++){
 				if(A[i-1].getModelo().compareTo(A[i].getModelo())>0){
@@ -122,7 +142,7 @@ public class Principal {
 				}
 			}
 		}
-	}
+	}*/	
 	public static void menu(){
 		System.out.println();
 		System.out.println("1 - Generar coches Automaticamente");

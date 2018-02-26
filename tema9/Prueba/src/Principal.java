@@ -2,8 +2,27 @@ import java.util.*;
 public class Principal {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		Random azar=new Random();
-		int num;
+		
+		String vect[]=new String [20];
+		for(int i = 0;i < 5;i++){
+			vect [i]=new String (Libreria.dniAzar());
+			
+		}
+		
+		for(int i=0; i<vect.length;i++){
+			if(vect[i]!=null){
+			System.out.print(" "+vect[i]);
+			}
+		}
+		
+		
+		
+		
+		
+		
+		/*int num;
 		int vec[]=new int[10];
 		for(int i=0;i<3;i++){
 			num=azar.nextInt(15)+2;
@@ -12,7 +31,7 @@ public class Principal {
 		System.out.println("Luego de introducir");
 		for(int i=0;i<vec.length;i++){
 			if(vec[i]!=0){
-				System.out.println(vec[i]);
+				System.out.print(vec[i]+" ");
 			}
 		}
 		System.out.println();
@@ -20,7 +39,7 @@ public class Principal {
 		int n=0;
 		for(int i=vec.length-1;i>=0;i--){
 			if(vec[i]!=0){
-				System.out.println(vec[i]);
+				System.out.print(vec[i]+" ");
 			}else{
 				n=i;
 			}
@@ -33,9 +52,9 @@ public class Principal {
 		System.out.println("Lo muestro lo que tenia mas lo añadido");
 		for(int i=0;i<vec.length;i++){
 			if(vec[i]!=0){
-				System.out.println(vec[i]);
+				System.out.print(vec[i]+" ");
 			}
-		}
+		}*/
 	}
 
 }

@@ -35,7 +35,11 @@ public class Automovil {
 		this.precio = precio;
 	}
 	public void verCoche(){
-		//System.out.printf("Marca: "+marca+" Modelo: "+modelo+" Cilindrada: "+cilindrada+" Precio: "+precio);
+		/*System.out.printf("%0.1s",marca);
+		System.out.printf("%15s",modelo);
+		System.out.printf("%15s",cilindrada);
+		System.out.printf("%15s",precio);
+		System.out.println();*/
 		Leer.mostrarEnPantalla(marca+" "+modelo+" "+cilindrada+" "+precio);
 	}
 	
