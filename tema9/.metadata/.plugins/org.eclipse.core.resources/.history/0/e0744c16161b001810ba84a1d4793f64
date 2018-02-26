@@ -1,0 +1,5 @@
+
+public class Restaurante {
+	private double precio;
+	private Ingredientes ingrediente;
+}

@@ -1,0 +1,66 @@
+
+public class Restaurante {
+	private double precio;
+	private Ingredientes ingrediente;
+	private String nombrePlato;
+	private String bebida;
+	private String postre;
+	
+	public Restaurante(double precio, Ingredientes ingrediente, String nombrePlato, String bebida, String postre) {
+		super();
+		this.precio = precio;
+		this.ingrediente = ingrediente;
+		this.nombrePlato = nombrePlato;
+		this.bebida = bebida;
+		this.postre = postre;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public Ingredientes getIngrediente() {
+		return ingrediente;
+	}
+
+	public void setIngrediente(Ingredientes ingrediente) {
+		this.ingrediente = ingrediente;
+	}
+
+	public String getNombrePlato() {
+		return nombrePlato;
+	}
+
+	public void setNombrePlato(String nombrePlato) {
+		this.nombrePlato = nombrePlato;
+	}
+
+	public String getBebida() {
+		return bebida;
+	}
+
+	public void setBebida(String bebida) {
+		this.bebida = bebida;
+	}
+
+	public String getPostre() {
+		return postre;
+	}
+
+	public void setPostre(String postre) {
+		this.postre = postre;
+	}
+
+	public void verCarta(){
+		System.out.println("NOMBRE DEL PLATO: "+nombrePlato);
+		System.out.println("INGREDIENTES");
+		ingrediente.verIngre();
+		System.out.println("BEBIDA: "+bebida);
+		System.out.println("PRECIO: "+precio);
+		System.out.println("POSTRE: "+postre);
+	}
+}

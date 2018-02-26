@@ -1,0 +1,10 @@
+
+public class Restaurante {
+	private double precio;
+	private Ingredientes ingrediente;
+	private String nombrePlato;
+
+	public void verCarta(){
+		System.out.println();
+	}
+}
