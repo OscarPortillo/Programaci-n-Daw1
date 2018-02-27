@@ -1,0 +1,56 @@
+
+public class Alumno {
+	private String nombre;
+	private Integer edad;
+	private Asignatura asig;
+	private double nota;
+	private String fechaNac;
+
+	public Alumno(String nombre, Integer edad, Asignatura asig[], double nota[], String fechaNac) {
+		super();
+		this.nombre = nombre;
+		this.edad = edad;
+		this.asig = asig[10];
+		this.nota = nota[10];
+		this.fechaNac = fechaNac;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void verAlumno(){
+		System.out.println("Nombre: "+nombre);
+		System.out.println("Edad: "+edad);
+		System.out.println("Fecha Nacimiento: "+fechaNac);
+		System.out.println("Asignatura: ");
+		asig.verAsig();
+		System.out.println("Nota: "+nota);
+	}
+	public void cambiarNombre(String nombre){
+		System.out.println("Introduce el nuevo nombre");
+		this.nombre=nombre;
+	}
+	public void modificarFechaNacimiento(int dia,int mes,int año){
+		this.fechaNac=dia+"-"+mes+"-"+año;
+	}
+	public String  verNota(){
+		if(nota>=6){
+			return "Aprobado";
+		}else{
+			return "Suspendido";
+		}
+	}
+	public void añadirAsignatura(Asignatura unaAsig[],String nuevaAsig){
+		int repetida=0;
+		for(int i=0;i < unaAsig.length && repetida==0;i++){
+			if(unaAsig[i].getNombreAsig()getClass().equals(nuevaAsig)){
+				repetida=1;
+			}else{
+				repetida=0;
+			}
+		}
+	}
+}

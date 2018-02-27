@@ -1,0 +1,47 @@
+
+public class Colegio {
+
+	public static void main(String[] args) {
+		Asignatura asig[]=new Asignatura[6];
+		Alumno alu[]=new Alumno[3];
+		System.out.println(nivel());
+		crearAsig(asig);
+		verAsig(asig);
+	}//main
+	public static void crearAlu(Alumno alu[]){
+		for(int i=0;i<alu.length;i++){
+			
+			alu[i]=new Alumno(Libreria.nombreAzar(),Libreria.enteroAzar(15, 25),);
+		}
+	}
+	public static String buscarAsig(Asignatura asig[],String materia){
+		String mat="";
+		for(int i=0;i<asig.length;i++){
+			asig[i].getNombreAsig();
+			mat+=asig[i];
+		}
+		return mat;
+	}
+	public static void crearAsig(Asignatura asig[]){
+		for(int i=0;i<asig.length;i++){
+			asig[i]=new Asignatura(Libreria.asignaturaAzar(),Libreria.enteroAzar(1, 9),nivel());
+		}
+	}
+	public static void verAsig(Asignatura asig[]){
+		for(int i=0;i<asig.length;i++){
+			System.out.println("Asignatura numero: "+(i+1));
+			asig [i].verAsig();
+		}
+	}
+	public static String nivel(){
+		int opc;
+		String nivel="";
+		opc=Libreria.enteroAzar(1, 2);
+		if(opc==1){
+			nivel="1º";
+		}else if(opc==2){
+			nivel="2º";
+		}
+		return nivel;
+	}
+}//claas

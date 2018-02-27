@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Libreria.java&apos; to &apos;Alumnos/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;Comedor&apos;&#x0D;&#x0A;- Destination element: &apos;Alumnos/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;Libreria.java&apos;" description="Copy compilation unit" destination="=Alumnos/src&lt;" element1="/Comedor\/src&lt;{Libreria.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1519752264297" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,18 @@
+
+public class Asignatura {
+	
+	private String nombreAsig;
+	private Integer numHoras;
+	private String nivel;
+	
+	public Asignatura(String nombreAsig, Integer numHoras, String nivel) {
+		this.nombreAsig = nombreAsig;
+		this.numHoras = numHoras;
+		this.nivel = nivel;
+	}
+
+	public String getNombreAsig() {
+		return nombreAsig;
+	}
+	
+}

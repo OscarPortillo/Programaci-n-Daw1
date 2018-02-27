@@ -1,0 +1,9 @@
+
+public class Colegio {
+
+	public static void main(String[] args) {
+		Asignatura asig[];
+		Alumno alu[];
+	}//main
+	
+}//claas
