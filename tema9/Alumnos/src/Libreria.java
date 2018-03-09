@@ -38,7 +38,7 @@ public class Libreria {
 	}
 	static public String asignaturaAzar() {
 		Random azar= new Random();
-		String asig[]={"Entornos y desarrollo","Inglés","Programación",
+		String asig[]={"Entornos y desarrollo","Inglés","Programación","Matematicas","Lenguaje","Cinecias","Filosofia",
 				"Sistemas Informáticos","Bases de Datos","FOL","Lenguaje de Marcas"};
 		return asig[azar.nextInt(asig.length)];
 	}

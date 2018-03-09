@@ -4,10 +4,10 @@ public class Colegio {
 	public static void main(String[] args) {
 		Asignatura asig[]=new Asignatura[6];
 		Alumno alu[]=new Alumno[3];
-		System.out.println(nivel());
+		//System.out.println(nivel());
 		int opc;
-		crearAsig(asig);		
-		crearAlu(alu, asig);
+		crearAsig(asig);
+		
 		do{
 			menu();
 			opc=Libreria.pedirEntero("Elije opcion");
@@ -16,7 +16,7 @@ public class Colegio {
 				verAsig(asig);
 				break;
 			case 2:
-				verAlu(alu);
+				
 				break;
 
 			}
@@ -27,37 +27,45 @@ public class Colegio {
 	public static  void menu(){
 		System.out.println(" 1 - Ver asignaturas");
 		System.out.println(" 2 - Ver alumnos");
-		/*System.out.println(" 3 - ");
-		System.out.println(" 4 - ");
-		System.out.println(" 5 - ");*/
 		System.out.println(" 0 - Salir");
 	}
-	public static void crearAlu(Alumno alu[], Asignatura[] asig){
-		String materia;
+	/*public static void crearAlu(Alumno alu[]){
 		for(int i=0;i<alu.length;i++){
-			for(int k=0;k<6;k++){				
-
-				materia=Libreria.asignaturaAzar();
-				asig[k].getNombreAsig().equals(materia);
-				asig[k]=new Asignatura(Libreria.asignaturaAzar(),Libreria.enteroAzar(1, 9),nivel());
-				alu[i]=new Alumno(Libreria.nombreAzar(),Libreria.enteroAzar(15, 25),asig,Libreria.enteroAzar(1, 10),Libreria.fechaNacimientoAzar());
-			}
-
+			alu[i]=new Alumno(Libreria.nombreAzar(),Libreria.fechaNacimientoAzar());
 		}
 	}
-	public static void verAlu(Alumno alu[]){
-
+	public static void verALu(Alumno alu[]){
 		for(int i=0;i<alu.length;i++){
-			System.out.println("========================================");
-			System.out.println("Alumno numero: "+(i+1));
 			alu[i].verAlumno();
-
+			alu[i].notaMedia();
 		}
 	}
+*/
 	public static void crearAsig(Asignatura asig[]){
+		int cont=0;
+		String m;
 		for(int i=0;i<asig.length;i++){
-			asig[i]=new Asignatura(Libreria.asignaturaAzar(),Libreria.enteroAzar(1, 9),nivel());
+			m=Libreria.asignaturaAzar();
+			asig[i]=new Asignatura (m,Libreria.enteroAzar(1, 7),nivel());
 		}
+		System.out.println("Comprobando si se repiten");
+		do{
+			m=Libreria.asignaturaAzar();
+			for(int i=0; i<asig.length;i++){				
+				if(asig[i].equals(m)){
+					System.out.println(m+" Se repite introduce uno nuevo");
+					m=Libreria.asignaturaAzar();
+					while(asig[i].equals(m)){
+						m=Libreria.asignaturaAzar();
+						asig[i]=new Asignatura (m,Libreria.enteroAzar(1, 7),nivel());
+					}
+					
+					cont++;
+				}else{
+					cont=0;
+				}
+			}
+		}while(cont!=0);
 	}
 	public static void verAsig(Asignatura asig[]){
 		for(int i=0;i<asig.length;i++){

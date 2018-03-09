@@ -5,23 +5,34 @@ public class Principal {
 		@SuppressWarnings("unused")
 		Random azar=new Random();
 		
-		String vect[]=new String [20];
-		for(int i = 0;i < 5;i++){
-			vect [i]=new String (Libreria.dniAzar());
-			
+		String vect[]=new String [3];
+		String m;
+		for(int i = 0;i < 3;i++){
+			vect [i]=new String (Libreria.asignaturaAzar());			
 		}
-		
-		for(int i=0; i<vect.length;i++){
-			if(vect[i]!=null){
-			System.out.print(" "+vect[i]);
+		int cont=0;
+		System.out.println("Comprobando si se repiten");
+		System.out.println();
+		do{
+			m=Libreria.asignaturaAzar();
+			for(int i=0; i<vect.length;i++){				
+				if(vect[i].equals(m)){
+					System.out.println(m+" Se repite introduce uno nuevo");
+					m=Libreria.asignaturaAzar();
+					while(vect[i].equals(m)){
+						m=Libreria.asignaturaAzar();
+						vect[i]=new String (m);
+					}
+					
+					cont++;
+				}else{
+					cont=0;
+				}
 			}
+		}while(cont!=0);
+		for(int i = 0;i < 3;i++){
+			System.out.println(vect [i]);
 		}
-		
-		
-		
-		
-		
-		
 		/*int num;
 		int vec[]=new int[10];
 		for(int i=0;i<3;i++){
