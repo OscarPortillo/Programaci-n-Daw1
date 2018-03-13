@@ -1,0 +1,134 @@
+import java.util.Random;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Random azar=new Random();
+
+		Coche coche[]=new Coche[20];
+		crearCoches(coche);
+		int opc;
+		do{
+			menu();
+			opc=Leer.pedirEntero("Opcion?");
+			switch(opc){
+			case 1:
+				verCoches(coche);
+				opc=Leer.pedirEntero("Que coche quiere alquilar?");
+				alquilar(coche,opc);
+				break;
+			case 3:
+				verDisponibles(coche);
+				break;
+			case 4:
+				verOcupados(coche);
+				break;
+			}
+		}while(opc!=0);
+	}//main
+	public static void alquilar(Coche coche[], int n){
+		
+			coche[n].setDisponible(false);
+		
+	}
+	public static void verDisponibles(Coche coche[]){
+		for(int i=0;i<coche.length;i++){
+			if(coche[i]instanceof Normal){
+				Normal nor;
+				nor=(Normal) coche[i];
+				if(nor.isDisponible()==true){
+					System.out.println(nor.verCoche());
+				}
+			}
+			if(coche[i]instanceof Lujo){
+				Lujo l;
+				l=(Lujo) coche[i];
+				if(l.isDisponible()==true){
+					System.out.println(l.verCoche());
+				}
+			}
+		}
+	}
+	public static void verOcupados(Coche coche[]){
+		for(int i=0;i<coche.length;i++){
+			if(coche[i]instanceof Normal){
+				Normal nor;
+				nor=(Normal) coche[i];
+				if(nor.isDisponible()==false){
+					System.out.println(nor.verCoche());
+				}
+			}
+			if(coche[i]instanceof Lujo){
+				Lujo l;
+				l=(Lujo) coche[i];
+				if(l.isDisponible()==false){
+					System.out.println(l.verCoche());
+				}
+			}
+		}
+	}
+	public static void crearCoches(Coche coche[]){
+		Random azar=new Random();
+		String matricula[]={"1907 FVD","1997 FYD","1907 SJD","1907 FMN","1907 FZV","1978 FML","1945 FPS",
+				"1912 FED","1906 FSD","1937 FED","1657 FPD","1877 FCD","1920 FQD","1907 YTD","1785 QQQ",
+				"1901 FTD","1917 WVP","1904 QWP","1947 FVC","1907 FVR","7898 POP","1818 KMK"};
+		String lujo[]={ "Jaguar", "Lamborghini", "Audi", "BMW","Suzuki", "Mitsubishi","Koenigsegg","Ranault","Ferrari","Porsche"};
+		String normal[]={"Opel", "Ford", "Chevrolet", "Nissan", "BMW", "Toyota", "Suzuki", "Citroen","Mini", 
+				"Jeep", "Mazda","Ranault"};
+		String modelo[]={"Modelo1A", "Modelo2A", "Modelo3A", "Modelo4A", "Modelo5A", "Modelo6A",
+				"Modelo1B", "Modelo2B", "Modelo3B", "Modelo4B", "Modelo5B", "Modelo6B"};
+		int num=0;
+		for(int i=0;i<12;i++){
+			coche[i]=new Normal(matricula[i],normal[i],modelo[i],fechaRandom(),true,aparcamiento());
+
+		}
+		for(int i=12;i<coche.length;i++){
+			coche[i]=new Lujo(matricula[i],lujo[num],modelo[num],fechaRandom(),true);
+			num++;
+		}
+
+	}//crear coches
+	public static void verCoches(Coche coche[]){
+		for(int i=0;i<coche.length;i++){
+			if(coche[i]instanceof Normal){
+				Normal n;
+				n=(Normal) coche[i];
+				System.out.println("numero "+i+" "+n.verCoche());
+			}
+			if(coche[i]instanceof Lujo){
+				Lujo l;
+				l=(Lujo) coche[i];
+				System.out.println("numero "+i+" "+l.verCoche());
+			}
+		}
+	}
+	private static Fecha fechaRandom() {
+		Fecha fechaFabricacion = new Fecha((int) (Math.random() * 28) + 1, (int) (Math.random() * 11) + 1,
+				(int) (Math.random() * (2017 - 2000 + 1)) + 2000);
+		return fechaFabricacion;
+	}
+	public static void menu(){
+		System.out.println(" 1 - Alquilar coche");
+		System.out.println(" 2 - Devolver coche");
+		System.out.println(" 3 - Ver disponibles");
+		System.out.println(" 4 - Ver ocupados");
+	}
+
+	public static String aparcamiento(){
+		String aparca = "";
+		Random azar=new Random();
+		int n;
+		n=azar.nextInt(3)+1;
+		String apar[]={"Aparcamiento del Ebro", "IberPark","Aragonia"};
+		if(n==1){
+			aparca=apar[0];
+		}
+		if(n==2){
+			aparca=apar[1];
+		}
+		if(n==3){
+			aparca=apar[2];
+		}
+		return aparca;
+	}//metodo aparcamiento azar
+}//class

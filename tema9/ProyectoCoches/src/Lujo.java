@@ -1,24 +1,22 @@
+public class Lujo extends Coche {
 
-public class Lujo extends Coche{
+	/***
+	 * @author Diogo Pinto
+	 ***/
+
 	private Integer codigo;
-	private static Integer siguiente=0;
-	
-	public Lujo(String matricula, String marca, String modelo, Fecha fechaFabricacion, boolean disponible,
-			Integer precioDiario,Integer codigo) {
-		super(matricula, marca, modelo, fechaFabricacion, disponible, precioDiario);
-		this.codigo=codigo;
+	private static Integer siguiente = 10001;
+
+	public Lujo(String matricula, String marca, String modelo, Fecha fechaFabricacion, Integer precioDiario) {
+		super(matricula, marca, modelo, fechaFabricacion, precioDiario);
+		codigo = siguiente;
 		siguiente++;
 	}
-	
-	
-	
-	public String alquilar() {
-		
-		return super.alquilar()+" codigo = "+codigo;
-		
+
+	public String visualizar() {
+		return "Lujo [codigo=" + codigo + ", Matricula=" + getMatricula() + ", Marca=" + getMarca() + ", Modelo="
+				+ getModelo() + ", FechaFabricacion=" + getFechaFabricacion() + ", PrecioDiario=" + getPrecioDiario()
+				+ ", Disponible=" + getDisponible() + "]";
 	}
-	public Integer getCodigo() {
-		return codigo;
-	}
-	
+
 }

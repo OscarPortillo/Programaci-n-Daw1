@@ -7,6 +7,7 @@ public class GestionMueble {
 		int opc;
 		crearMueble(mueble);//VOY AL METODO CREAR MUEBLE
 		creaAlmacen(alma);//creo los almcenes en el metodo
+		crearInfoAlma( alma, mueble);//metodo crearInfoAlma
 		do{
 			menu();
 			opc=Libreria.pedirEntero("Elije opcion");
@@ -18,7 +19,7 @@ public class GestionMueble {
 				verAlmace(alma);//voy al metodo crear alamcenes
 				break;
 			case 3://ver la informacion de los alamecenes con los muebles qu eguarda
-				crearInfoAlma( alma, mueble);//metodo crearInfoAlma
+				
 				verInfoAlma(alma);//verInfoAlma
 				break;
 			}
@@ -33,7 +34,7 @@ public class GestionMueble {
 		for(int i=0;i<alma.length;i++){
 			numMuebles=Libreria.enteroAzar(0, mueble.length);//genro un numero azar entre 0 y la longitud del vector muebles
 			for(int k=0;k<numMuebles;k++){//mientras k sea menor que el numero generado al azar
-				alma[i]=new Almacen (alma[i].getNombre(),mueble,alma[i].getDireccion());//pasará el nombre y tantos
+				alma[i]=new Almacen (alma[i].getNombre(), mueble[k], alma[i].getDireccion());//pasará el nombre y tantos
 				//muebles como se han generado al azar entre 0 y la longitud del vector muebles 
 			}//for interno
 		}//for

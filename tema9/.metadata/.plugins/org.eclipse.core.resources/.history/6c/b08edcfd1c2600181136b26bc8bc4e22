@@ -1,0 +1,80 @@
+import java.util.Random;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Random azar=new Random();
+
+		Coche coche[]=new Coche[20];
+		crearCoches(coche);
+		int opc;
+		do{
+			menu();
+			opc=Leer.pedirEntero("Opcion?");
+			switch(opc){
+			case 1:
+				verCoches(coche);
+				break;
+			}
+		}while(opc!=0);
+	}//main
+	public static void crearCoches(Coche coche[]){
+		Random azar=new Random();
+		String matricula[]={"1907 FVD","1997 FYD","1907 SJD","1907 FMN","1907 FZV","1978 FVD","1945 FPS",
+				"1912 FVD","1906 FSD","1937 FED","1657 FVD","1877 FCD","1920 FVD","1907 YTD","1785 FVD",
+				"1901 FTD","1917 FVP","1904 FVP","1947 FVC","1907 FVR",};
+		String marca[]={"Opel", "Ford", "Chevrolet", "Nissan", "Jaguar", "Lamborghini", "Audi", "BMW", "Toyota", "Suzuki", "Citroen","Mini", 
+				"Jeep", "Mazda", "Mercedes", "Mitsubishi","Koenigsegg","Ranault","Ferrari","Porsche"};
+		String modelo[]={"Modelo1A", "Modelo2A", "Modelo3A", "Modelo4A", "Modelo5A", "Modelo6A",
+				"Modelo1B", "Modelo2B", "Modelo3B", "Modelo4B", "Modelo5B", "Modelo6B"};
+		int num;
+		num=azar.nextInt(15)+1;
+		int c=20-num;
+		for(int i=0;i<coche.length-num;i++){
+			coche[i]=new Normal(matricula[i],marca[i],modelo[i],fechaRandom(),true,aparcamiento());
+			
+		}
+		for(int i=num;i<coche.length-num;<coche.length;i++){
+			coche[i]=new Lujo(matricula[i],marca[i],modelo[i],fechaRandom(),true);
+		}
+
+	}//crear coches
+	public static void verCoches(Coche coche[]){
+		for(int i=0;i<coche.length;i++){
+			if(coche[i]instanceof Normal){
+				Normal n;
+				n=(Normal) coche[i];
+				System.out.println(n);
+			}
+		}
+	}
+	private static Fecha fechaRandom() {
+		Fecha fechaFabricacion = new Fecha((int) (Math.random() * 28) + 1, (int) (Math.random() * 11) + 1,
+				(int) (Math.random() * (2017 - 2000 + 1)) + 2000);
+		return fechaFabricacion;
+	}
+	public static void menu(){
+		System.out.println(" 1 - Alquilar coche");
+		System.out.println(" 2 - Devolver coche");
+		System.out.println(" 3 - Ver disponibles");
+		System.out.println(" 4 - Ver ocupados");
+	}
+
+	public static String aparcamiento(){
+		String aparca = "";
+		Random azar=new Random();
+		int n;
+		n=azar.nextInt(3)+1;
+		String apar[]={"Aparcamiento del Ebro", "IberPark","Aragonia"};
+		if(n==1){
+			aparca=apar[0];
+		}
+		if(n==2){
+			aparca=apar[1];
+		}
+		if(n==3){
+			aparca=apar[2];
+		}
+		return aparca;
+	}//metodo aparcamiento azar
+}//class

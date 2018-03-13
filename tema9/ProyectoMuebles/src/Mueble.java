@@ -10,6 +10,7 @@ public class Mueble {
 		this.ancho = ancho;
 		this.alto = alto;
 		this.fondo = fondo;
+		codigo++;
 	}	
 	/*public void muestraMueble(){
 		System.out.println("INFORMACION DEL MUEBLE");
@@ -22,7 +23,6 @@ public class Mueble {
 	}
 	@Override*/
 	public String muestraMueble() {	
-		codigo++;
 		return "Mueble ["+"Codigo: "+codigo+" descripcion= " + descripcion + ", ancho = " + ancho + ", alto = " + alto + ", fondo = " + fondo + "]";
 	}
 	

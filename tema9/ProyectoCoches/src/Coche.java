@@ -1,60 +1,61 @@
-
 public class Coche {
+
+	/***
+	 * @author Diogo Pinto
+	 ***/
+
 	private String matricula;
 	private String marca;
 	private String modelo;
 	private Fecha fechaFabricacion;
-	private boolean disponible;
+	private Boolean disponible;
 	private Integer precioDiario;
 
-	public Coche(String matricula, String marca, String modelo, Fecha fechaFabricacion, boolean disponible,
-			Integer precioDiario) {
+	public Coche(String matricula, String marca, String modelo, Fecha fechaFabricacion, Integer precioDiario) {
 		this.matricula = matricula;
 		this.marca = marca;
 		this.modelo = modelo;
 		this.fechaFabricacion = fechaFabricacion;
-		this.disponible = disponible;
+		this.disponible = true;
 		this.precioDiario = precioDiario;
 	}
-	public String alquilar() {
-		return "Coche [matricula = " + matricula + ", marca = " + marca + ", modelo = " + modelo + ", fechaFabricacion = "
-				+ fechaFabricacion + ", disponible = " + disponible + ", precioDiario = " + precioDiario + "]";
+
+	public String visualizar() {
+		return "Coche [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", fechaFabricacion="
+				+ fechaFabricacion + ", disponible=" + disponible + ", precioDiario=" + precioDiario + "]";
 	}
+
 	public String getMatricula() {
 		return matricula;
 	}
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
+
 	public String getMarca() {
 		return marca;
 	}
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
+
 	public String getModelo() {
 		return modelo;
 	}
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
-	}
+
 	public Fecha getFechaFabricacion() {
 		return fechaFabricacion;
 	}
-	public void setFechaFabricacion(Fecha fechaFabricacion) {
-		this.fechaFabricacion = fechaFabricacion;
-	}
-	public boolean getDisponible() {
-		return disponible;
-	}
-	public void setDisponible(boolean disponible) {
-		this.disponible = disponible;
-	}
+
 	public Integer getPrecioDiario() {
 		return precioDiario;
 	}
-	public void setPrecioDiario(Integer precioDiario) {
-		this.precioDiario = precioDiario;
+
+	public Boolean getDisponible() {
+		return disponible;
 	}
 
-}//class
+	public void alquilar() {
+		this.disponible = false;
+	}
+
+	public Integer devolver(Integer dias) {
+		this.disponible = true;
+		return dias*precioDiario;
+	}
+
+}

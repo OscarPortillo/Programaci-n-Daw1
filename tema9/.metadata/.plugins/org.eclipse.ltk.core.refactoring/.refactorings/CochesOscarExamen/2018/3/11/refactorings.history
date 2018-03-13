@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;n&apos; in &apos;Principal.alquilar(...)&apos; to &apos;nor&apos;&#x0D;&#x0A;- Original project: &apos;CochesOscarExamen&apos;&#x0D;&#x0A;- Original element: &apos;Principal.alquilar(Coche[], int).n&apos;&#x0D;&#x0A;- Renamed element: &apos;n&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;n&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{Principal.java[Principal~alquilar~\[QCoche;~I@n!543!551!550!550!QNormal;!0!false" name="nor" references="true" stamp="1520877785929" version="1.0"/>
+</session>

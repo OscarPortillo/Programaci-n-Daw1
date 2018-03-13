@@ -3,12 +3,13 @@ import java.util.Random;
 public class Almacen {
 	private String nombre;
 	private String direccion;
-	private Mueble mueble[];
+	private Mueble[] mueble;
+	
 	public Almacen(String nombre, String direccion) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 	}
-	public Almacen(String nombre,Mueble mueble[], String direccion){//USO OTRO CONSTRUCTOR PARA PASARLE MUEBLES 
+	public Almacen(String nombre,Mueble[] mueble, String direccion){//USO OTRO CONSTRUCTOR PARA PASARLE MUEBLES 
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.mueble=mueble;
@@ -29,7 +30,7 @@ public class Almacen {
 		System.out.println("Nombre : "+nombre);
 		System.out.println("Direccion : "+direccion);
 		System.out.println("Informacion de los muebles que guarda");
-		n=azar.nextInt(mueble.length)+1;//GENRO UN UMERO AZAR ENTRE 0 Y LA LONGITUD DEL VECTOR
+		n=azar.nextInt(mueble.length+1);//GENRO UN UMERO AZAR ENTRE 0 Y LA LONGITUD DEL VECTOR
 		System.out.println("Este almacen guarda "+n+" Muebles");
 		for(int i=0;i<n;i++){
 			if(mueble[i]!=null){//ENTRARA SI LA POSICION TIENE DATOS

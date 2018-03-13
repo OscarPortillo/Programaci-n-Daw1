@@ -1,337 +1,190 @@
-import java.util.Random;
-
 public class GestionAgencia {
+
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		final Integer NUMCOCHE=20;
-		Coche[] coches=new Coche[NUMCOCHE];
-		Coche[] coche1=new Lujo[coches.length];
-		Coche[] coche2=new Normal[coches.length];
-		// llamada al método para crear los coches	.
-		crearCocheLujo(coche1);
-		crearCocheNormal(coche2);
-		int opcion,opc;
-		do {//menú
-			menu();//opción de menú
-			opcion=Leer.pedirEntero("Elije opcion");
-			switch (opcion) {//acciones de menú
-			case 1://alquilar
-				//código
-				do{
-					alquilarCoche();
-					opc=Leer.pedirEntero("Que coche quiere alquilar");
-				}while(opc!=1 && opc!=2);
-				if(opc==1){
-					alquilarCocheLujo(coche1);
-				}
-				if(opc==2){
-					alquilarCocheNormal(coche2);
+		/***
+		 * @author Diogo Pinto
+		 ***/
+
+		int num, opcion;
+		final Integer NUMCOCHE = 20;
+		Coche coches[] = new Coche[NUMCOCHE];
+		// creo los coches
+		crearCoches(coches);
+		opcion = menu();
+		while (opcion != 0) {
+			switch (opcion) {
+			case 1:// coches para alquilar
+				mostrarLibres(coches);
+				num = pedirCocheAlquilar();
+				// solo aparecen los disponibles
+				// si está alquilado lo muestra por pantalla
+				if (coches[num].getDisponible() == true)
+					coches[num].alquilar();
+				else
+					Leer.mostrarEnPantalla("Ya está alquilado");
+				break;
+			case 2:// coches para devolver
+				mostrarOcupados(coches);
+				num = pedirCocheDevolver();
+				// solo aparecen los que no se han devuelto
+				// si no está alquilado lo muestra por pantalla
+				if (coches[num].getDisponible() == false) {
+					int dias = Leer.pedirEntero("Cuantos dias se ha usado?");
+					Leer.mostrarEnPantalla("Importe a pagar: " + coches[num].devolver(dias));
+				} else {
+					Leer.mostrarEnPantalla("No está alquilado");
 				}
 				break;
-			case 2://devolver
-				//código
-				do{
-					devolver();
-					opc=Leer.pedirEntero("Que tipo coche quiere devolver");
-				}while(opc!=1 && opc!=2);
-				if(opc==1){
-					devolverCocheLujo(coche1);
-				}
-				if(opc==2){
-					devolverCocheNormal(coche2);
-				}
+			case 3:// muestra todos los libres
+				mostrarLibres(coches);
 				break;
-			case 3://Listar disponibles
-				//código
-				System.out.println();
-				System.out.println("Coches de lujo disponibles");
-				verCochesDisponiblesDeLujo(coche1);
-				System.out.println();
-				System.out.println("Coches normales disponibles");
-				verCochesDisponibleNormal(coche2);
-				break;
-			case 4://Listar ocupados
-				//código
-				System.out.println("Coches de lujo ocupados");
-				verCochesOcupadosDeLujo(coche1);
-				System.out.println("Coches normales ocupados");
-				verCochesOcupadosNormal(coche2);
+			case 4:// muestra todos los ocupados
+				mostrarOcupados(coches);
 			}
-		} while (opcion!=0);
-	}//main
-	public static void devolver(){
-		System.out.println(" 1 - Devolver coche de lujo");
-		System.out.println(" 2 - Devolver coche normal");
-	}
-	public static void crearCocheLujo(Coche coche1[]){
-		Random azar= new Random();
-		boolean disponible=true;
-		Fecha fecha;//=new Fecha(num, num, num);
-		int dia,mes,año,codigo=10000;		
-		for(int i=0;i<coche1.length;i++){
-			codigo++;
-			dia=azar.nextInt(30);
-			mes=azar.nextInt(12)+1;
-			año=azar.nextInt(2018)-2000;
-			fecha=new Fecha(dia, mes, año);
-			coche1[i]=new Lujo(Libreria.matriculaAzar()
-					,Libreria.cocheAzar(),Libreria.modeloAzar(),fecha,disponible,Libreria.enteroAzar(50, 60),codigo);
+			opcion = menu();
 		}
-	}
-	public static Fecha pedirFecha(){
-		Random azar= new Random();
-		Fecha fecha;
-		Integer dia, mes, año;
-		dia=azar.nextInt(30)+1;
-		mes = azar.nextInt(12)+1;
-		año=azar.nextInt(2018)-2000;
-		fecha = new Fecha (dia, mes, año);
 
-		return fecha;
-	}
-	public static void crearCocheNormal(Coche coche2[]){
-		boolean disponible=true;
-		Fecha fecha;
-		fecha=pedirFecha();
-		int codigo=100;
-		for(int i=0;i<coche2.length;i++){
-			codigo++;			
-			coche2[i]=new Normal(Libreria.matriculaAzar(),Libreria.cocheAzar(),Libreria.modeloAzar(),fecha,disponible,
-					Libreria.enteroAzar(20, 30),aparcaAzar(),fecha,codigo);
-		}
-	}
-	
-	public static void alquilarCocheLujo(Coche coche[]){
-		int codigo;
-		boolean alquilado=false;
-		for(int i=0;i<coche.length;i++){
-			if(coche[i] instanceof Lujo){
-				Lujo lujo;
-				lujo=(Lujo) coche[i];
-				System.out.println(lujo.alquilar());
-			}else{
-				System.out.println("No hay coches para alquilar");
-			}
-		}
-		codigo=Leer.pedirEntero("Introduzca el codigo del coche que quiere Alquilar.");
-		for(int i=0;i<coche.length && alquilado==false;i++){
-			if(alquilado==false){
-				if(coche[i] instanceof Lujo){//pregunto si es una instancia de coche
-					Lujo lujo;
-					lujo=(Lujo) coche[i];					
-					if(lujo.getCodigo()==(codigo)){// si el codigo introducido es igual al de lagun coche entra
-						if(lujo.getDisponible()==true){
-							lujo.setDisponible(false);//pongo disponible a false
-							alquilado=true;
-							System.out.println("Coche alquilado");
-						}else{
-							System.out.println("El coche no esta disponible");
-						}
-					}
-				}else{
-					System.out.println("No hay coches para alquilar");
-				}
-			}//if
-		}//for
-	}//alquilar coche de klujo
-	public static void devolverCocheLujo(Coche coche[]){
-		@SuppressWarnings("unused")
-		int codigo,contador=0;
-		boolean devuelto=false;
-		for(int i=0;i<coche.length;i++){
-			if(coche[i] instanceof Lujo){
-				Lujo lujo;
-				lujo=(Lujo) coche[i];
-				System.out.println(lujo.alquilar());
-			}else{
-				System.out.println("No hay coches para devolver");
-			}
-		}
-		int dias=0;
-		double total;
-		codigo=Leer.pedirEntero("Introduzca el codigo del coche que quiere devolver.");
-		dias=Leer.pedirEntero("Cuantod dias lo tuvo alquilado?");
-		for(int i=0;i<coche.length && devuelto==false;i++){
-			if(devuelto==false){
-				if(coche[i] instanceof Lujo){
-					Lujo lujo;
-					lujo=(Lujo) coche[i];				
-					if(lujo.getCodigo()==(codigo)){//sii el codigo introducido es igual que alguno del vector entra
-						total= dias*lujo.getPrecioDiario();//multiplico el precio por dias
-						System.out.println("El total a pagar será : "+total);
-						if(lujo.getDisponible()==false){
-							lujo.setDisponible(true);//vuelvo aponer el coche disponible
-							devuelto=true;
-							System.out.println("Coche devuelto");
-						}else{
-							System.out.println("el coche no nos pertenece");
-						}
-					}
-				}else{
-					System.out.println("No hay coches para devolver");
-				}
-			}//if
-		}//for
-	}//devolver coche de lujo
+	}// main
 
-	public static void alquilarCocheNormal(Coche coche[]){
-		for(int i=0;i<coche.length;i++){
-			if(coche[i] instanceof Normal){
-				Normal normal;
-				normal=(Normal) coche[i];
-				System.out.println(normal.alquilar());
-			}else{
-				System.out.println("No hay coches para alquilar");
-			}
+	// creacion de coches
+	private static void crearCoches(Coche[] coches) {
+		for (int i = 0; i < coches.length - 5; i++) { // 15 coches normales
+			String matricula = matriculaRandom();
+			String marca = normalRandom();
+			String modelo = modNorRandom();
+			Fecha fechaFabricacion = fechaRandom();
+			Integer precio = precioNormalRandom();
+			String aparcamiento = aparcamientoRandom();
+			coches[i] = new Normal(matricula, marca, modelo, fechaFabricacion, precio, aparcamiento);
 		}
-		int codigo = Leer.pedirEntero("Introduzca el codigo del coche que quiere Alquilar.");
-		boolean alquilado=false;
-		for(int i=0;i<coche.length && alquilado==false;i++){
-			if(alquilado==false){
-				if(coche[i] instanceof Normal){
-					Normal normal;
-					normal=(Normal) coche[i];					
-					if(normal.getCodigo()==(codigo)){//si el codigo introducido es igual entra
-						if(normal.getDisponible()==true){
-							normal.setDisponible(false);//pongo disponible a false
-							alquilado=true;
-							System.out.println("Coche alquilado");
-						}
-						else{
-							System.out.println("El coche no esta disponible");
-						}
-					}
-				}else{
-					System.out.println("No hay coches para alquilar");
-				}
-			}//if
-		}//for
-	}//alquilar coche normal
-	public static void devolverCocheNormal(Coche coche[]){
-		for(int i=0;i<coche.length;i++){
-			if(coche[i] instanceof Normal){
-				Normal normal;
-				normal=(Normal) coche[i];
-				System.out.println(normal.alquilar());
-			}else{
-				System.out.println("No hay coches para alquilar");
-			}
+		for (int i = coches.length - 5; i < coches.length; i++) { //de los 15 hasta los ultimos
+			String matricula = matriculaRandom();
+			String marca = lujoRandom();
+			String modelo = modLujRandom();
+			Fecha fechaFabricacion = fechaRandom();
+			Integer precio = precioLujoRandom();
+			coches[i] = new Lujo(matricula, marca, modelo, fechaFabricacion, precio);
 		}
-		double total;int dias;
-		int codigo = Leer.pedirEntero("Introduzca el codigo del coche que quiere devolver.");
-		dias=Leer.pedirEntero("Cuantos dias lo tuvo alquilado?");//pregnto los dias
-		
-		boolean devuelto=false;
-		for(int i=0;i<coche.length && devuelto==false;i++){
-			if(devuelto==false){
-				if(coche[i] instanceof Normal){
-					Normal normal;
-					normal=(Normal) coche[i];					
-					if(normal.getCodigo()==(codigo)){
-						total=dias*normal.getPrecioDiario();//multiplico los dias por precio 
-						total=total-0.50;
-						System.out.println("Total a pagar: "+total);
-						if(normal.getDisponible()==false){
-							normal.setDisponible(true);//vuelvo a poner el coche disponible
-							devuelto=true;							
-							System.out.println("Coche devuelto");
-							System.out.println(normal.alquilar());//muestro el coche devuelto
-						}
-						else{
-							System.out.println("Ese coche no nos pertenece");
-						}
-					}
-				}else{
-					System.out.println("No hay coches para devolver");
-				}
-			}//if
-			
-		}//for
-		
-	}//devolver coche normal
-	public static void verCochesDisponiblesDeLujo(Coche coche[]){
-		for(int i=0;i<coche.length;i++){
-			if(coche[i] instanceof Lujo){
-				Lujo lujo;
-				lujo=(Lujo) coche[i];
-				if(lujo.getDisponible()==true){//si detDisponible esta disponible entra
-					System.out.println(lujo.alquilar());//muestro los coches que estan disponibles
-				}
-			}else{
-				System.out.println("No hay coches para alquilar");
-			}
-		}
-	}//ver coches diponibles de lujo
-	public static void verCochesOcupadosDeLujo(Coche coche[]){
-		for(int i=0;i<coche.length;i++){
-			if(coche[i] instanceof Lujo){//pregunto si el coche es de lujo
-				Lujo lujo;
-				lujo=(Lujo) coche[i];
-				if(lujo.getDisponible()!=true){//si disponible es false entra
-					System.out.println(lujo.alquilar());//muestro los coches que estan ocupados
-				}
-			}else{
-				System.out.println("No hay coches para alquilar");
-			}
-		}
-	}//ver coches ocupados de lujo
-	public static void verCochesDisponibleNormal(Coche coche[]){
-
-		System.out.println();
-		for(int i=0;i<coche.length;i++){
-			if(coche[i] instanceof Normal){
-				Normal normal;
-				normal=(Normal) coche[i];
-				if(normal.getDisponible()==true){//si la posicion es true entra
-					System.out.println(normal.alquilar());//muestro los coches que estan disponibles
-				}
-			}else{
-				System.out.println("No hay coches para alquilar");
-			}
-		}
-	}//ver coches disponibles normales
-	public static void verCochesOcupadosNormal(Coche coche[]){
-
-		System.out.println();
-		for(int i=0;i<coche.length;i++){
-			if(coche[i] instanceof Normal){
-				Normal normal;
-				normal=(Normal) coche[i];
-				if(normal.getDisponible()!=true){//entrara si la posicion es false
-					System.out.println(normal.alquilar());//muestro los coches que no estan disponibles
-				}
-			}else{
-				System.out.println("No hay coches para alquilar");
-			}
-		}
-	}//ver coches ocupados normales
-	static public String aparcaAzar() {
-		Random azar= new Random();
-		int n;
-		String apar = "";
-		n=azar.nextInt(2)+1;
-		if(n==1){
-			apar= "Aparcamiento del Ebro";
-		}
-		if(n==2){
-			apar= "IberPark";
-		}
-		if(n==3){
-			apar= "Aragonia";
-		}
-		return apar;
 	}
-	public static void alquilarCoche(){
-		Leer.mostrarEnPantalla("1.- Alquilar coche de lujo");
-		Leer.mostrarEnPantalla("2.- Alquilar coche normal");
+
+
+	// menu que pide el coche a devolver (es distinto que los alquilados por el
+	// texto que está dentro)
+	private static int pedirCocheDevolver() {
+		int num;
+		num = Leer.pedirEntero("Que coche quieres devolver?");
+		while (num > 20 || num < 0) {
+			num = Leer.pedirEntero("Numero incorrecto, introduz el numero otravez");
+		}
+		return num;
 	}
-	public static void menu(){
+
+	// menu que pide el coche a alquilar
+	private static int pedirCocheAlquilar() {
+		int num;
+		num = Leer.pedirEntero("Que coche quieres alquilar?");
+		while (num > 19 || num < 0) {
+			num = Leer.pedirEntero("Numero incorrecto, introduz el numero otravez");
+		}
+		return num;
+	}
+
+	// autogenera una matricula
+	private static String matriculaRandom() {
+		String letras[] = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
+				"S", "T", "U", "V", "W", "X", "Y", "Z" };// 26
+		int num;
+		String letra1, letra2, letra3, matricula;
+		num = (int) (Math.random() * (8999) + 1000);
+		letra1 = letras[(int) (Math.random() * 26)];
+		letra2 = letras[(int) (Math.random() * 26)];
+		letra3 = letras[(int) (Math.random() * 26)];
+		matricula = num + letra1 + letra2 + letra3;
+		return matricula;
+	}
+
+	// marcas aleatorias para coche normal (no es lo mismo un Opel que un
+	// Ferrari)
+	private static String normalRandom() {
+		String marcas[] = { "Opel", "VW", "Fiat", "Renault", "Peugeot", "Dacia", "Seat" };// 7
+		String marca = marcas[(int) (Math.random() * 7)];
+		return marca;
+	}
+
+	// marcas aleatorias para coche de lujo
+	private static String lujoRandom() {
+		String marcas[] = { "Mercedes", "Ferrari", "Audi", "Lamborghini", "Porche" };// 5
+		String marca = marcas[(int) (Math.random() * 5)];
+		return marca;
+	}
+
+	// modelos aleatorios para coche normal (no es lo mismo un Opel que un
+	// Ferrari)
+	private static String modNorRandom() {
+		String modelo[] = { "3 puertas", "5 puertas", "Furgoneta", "Caravana" };// 4
+		String tipo = modelo[(int) (Math.random() * 4)];
+		return tipo;
+	}
+
+	// modelos aleatorios para coche de lujo
+	private static String modLujRandom() {
+		String modelo[] = { "3 puertas", "5 puertas", "Jeep" };// 3
+		String tipo = modelo[(int) (Math.random() * 3)];
+		return tipo;
+	}
+
+	// precios para normal
+	private static Integer precioNormalRandom() {
+		Integer precio = (int) (Math.random() * 10) + 21; // precio de 20-30
+		return precio;
+	}
+
+	// precios para lujo
+	private static Integer precioLujoRandom() {
+		Integer precio = (int) (Math.random() * 10) + 51; // precio de 50-60
+		return precio;
+	}
+
+	// aparcamiento para normal
+	private static String aparcamientoRandom() {
+		String aparcamiento[] = { "Aparcamiento del Ebro", "IberPark", "Aragonia" };// 3
+		String tipo = aparcamiento[(int) (Math.random() * 3)];
+		return tipo;
+	}
+
+	// fecha random para ambos
+	private static Fecha fechaRandom() {
+		Fecha fechaFabricacion = new Fecha((int) (Math.random() * 28) + 1, (int) (Math.random() * 11) + 1,
+				(int) (Math.random() * (2017 - 2000 + 1)) + 2000);
+		return fechaFabricacion;
+	}
+
+	// mostrar los ocupados si tienen el getDisponible falsos
+	private static void mostrarOcupados(Coche[] coches) {
+		for (int i = 0; i < coches.length; i++) {
+			if (coches[i].getDisponible() == false)
+				Leer.mostrarEnPantalla("Numero " + i + ": " + coches[i].visualizar());
+		}
+	}
+
+	// mostrar los libres si tienen el getDisponible verdadero
+	private static void mostrarLibres(Coche[] coches) {
+		for (int i = 0; i < coches.length; i++) {
+			if (coches[i].getDisponible() == true)
+				Leer.mostrarEnPantalla("Numero " + i + ": " + coches[i].visualizar());
+		}
+	}
+
+	// menu
+	public static int menu() {
+		int opcion;
 		Leer.mostrarEnPantalla("1.- Alquilar coche");
 		Leer.mostrarEnPantalla("2.- Devolver coche");
 		Leer.mostrarEnPantalla("3.- Listado de coches disponibles");
 		Leer.mostrarEnPantalla("4.- Listado de coches ocupados");
 		Leer.mostrarEnPantalla("0.- Salir");
+		opcion = Leer.pedirEntero("Elige comando");
+		return opcion;
 	}
-
 }
