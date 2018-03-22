@@ -17,3 +17,15 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !MESSAGE Error parsing metadata repository
 !SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2018-03-13 18:57:13.248
 !MESSAGE Error in file:/C:/eclipse/p2/org.eclipse.equinox.p2.repository/cache/content-1003850517.jar at line 59048, column 62: Missing required attribute in "property": value
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 19:08:25.454
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 19:08:25.454
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-15 18:06:25.331
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-15 18:06:25.331
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

@@ -79,8 +79,7 @@
 
 	   // imprime el contenido de la lista
 	   public void imprimir(){
-	      if ( estaVacia() ) 
-	      {
+	      if ( estaVacia() ){
 	         System.out.printf( "La lista %s esta vacia\n", nombre );
 	         return;
 	      } // 

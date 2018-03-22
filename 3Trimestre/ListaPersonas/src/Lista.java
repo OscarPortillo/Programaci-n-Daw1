@@ -72,15 +72,13 @@
 	   } // borrarUltimo
 
 	   // indica si la lista esta vacia
-	   public boolean estaVacia()
-	   { 
+	   public boolean estaVacia(){ 
 	      return primerNodo == null; // devuelve true si la lista esta vacia
 	   } // estaVacia
 
 	   // imprime el contenido de la lista
-	   public void imprimir(){
-	      if ( estaVacia() ) 
-	      {
+	   public void imprimir(){ 
+	      if ( estaVacia() ){
 	         System.out.printf( "La lista %s esta vacia\n", nombre );
 	         return;
 	      } // 
@@ -89,8 +87,7 @@
 	      Nodo actual = primerNodo;
 
 	      // mientras haya datos, muestra el nodo actual
-	      while ( actual != null ) 
-	      {
+	      while ( actual != null ){
 	         System.out.printf( "%s ", actual.dato );
 	         actual = actual.siguienteNodo;
 	      } // while

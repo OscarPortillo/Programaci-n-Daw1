@@ -31,6 +31,7 @@ public class TestLista {
 			objetoEliminado = lista.borrarUltimo();
 			System.out.printf( "%s eliminado\n", objetoEliminado );
 			lista.imprimir();
+			
 		} // fin de try
 		catch ( ListaVaciaException excepcionListaVacia ){
 			excepcionListaVacia.printStackTrace();
