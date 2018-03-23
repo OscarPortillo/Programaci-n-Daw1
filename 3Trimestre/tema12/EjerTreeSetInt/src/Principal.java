@@ -33,7 +33,7 @@ public class Principal {
 		System.out.println("Valores de HashSet: "+hash);
 		System.out.println("Valores de LinkedHashSet: "+lhs);
 		System.out.println("Valores de TreeSet: "+ts);
-
+	
 	}
 
 }

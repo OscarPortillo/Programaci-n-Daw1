@@ -2,6 +2,7 @@ import java.util.*;
 public class Principal {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		Random azar=new Random();
 		int num;
 		num=8;
@@ -9,6 +10,7 @@ public class Principal {
 		LinkedHashSet<String> lhs=new LinkedHashSet<String>();
 		TreeSet<String> ts=new TreeSet<String>();
 		String valor[]={"este "," montaña "," letra"," bajo "," frio "," bajo "," bajo "," aleatorio "};
+		@SuppressWarnings("unused")
 		String aux;
 		System.out.println("se van a generar "+num+" datos");
 		for(int i=0;i<num;i++){
@@ -33,6 +35,7 @@ public class Principal {
 		System.out.println("Valores de objHashSet: "+hash.toString());
 		System.out.println("Valores de objLinkHashSet: "+lhs);
 		System.out.println("Valores de objTreeSet: "+ts);
+		
 	}
 
 }
