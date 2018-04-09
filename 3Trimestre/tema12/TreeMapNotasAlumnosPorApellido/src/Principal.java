@@ -30,5 +30,7 @@ public class Principal {
 		}while(!apellido.equals("*"));
 		System.out.println(tm.toString());
 	}//main
-
+	/*public static void lol(){
+		TreeMap<String,TreeSet<String>> mapReparto=new TreeSet<Integer,TreeSet<String>>new Comparator<Integer>();
+		}*/
 }//class
