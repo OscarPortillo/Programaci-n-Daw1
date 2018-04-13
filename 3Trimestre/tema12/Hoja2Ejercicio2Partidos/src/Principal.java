@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+
 import java.util.*;
 public class Principal {
 
@@ -6,49 +6,55 @@ public class Principal {
 		String nombrePartido[]={"Partido1","Partido2","Partido3","Partido4"};
 		Integer votosPartido[]={10000,25000,30000,12000};
 
-		TreeMap<String,Integer> partidos=new TreeMap<String,Integer>();
-		Integer array []=new Integer[5];
+		String nombresOrdenado[] = new String[nombrePartido.length];
+		TreeMap<String,Integer> mapPartidos=new TreeMap<String,Integer>();
+		
+		Integer repartoEscanios []=new Integer[5];
+		String nombreMax;
+		Integer numMax;
+
 		int cociente;
 		int mayor=0;
 		for(int i=0;i<nombrePartido.length;i++){
-			partidos.put(nombrePartido[i], votosPartido[i]);			
+			mapPartidos.put(nombrePartido[i], votosPartido[i]);			
 		}
+		TreeMap<String,ArrayList<Integer>> mapPartidoCocientes=new TreeMap<String,ArrayList<Integer>>();
 
-		/*TreeMap<Integer, TreeSet<String>> mapReparto = new TreeMap<Integer, TreeSet<String>>(new Comparator<Integer>() {
-			public int compare(Integer o1, Integer o2) {
-				return o2 - o1;
-			}
-		});*/
-		//	System.out.println();
-		TreeMap<String,ArrayList<Integer>> partido2=new TreeMap<String,ArrayList<Integer>>();
-
-		for(String nombrePart:partidos.keySet()){//guardas en nombrePart la clave
-			Integer numVotos=partidos.get(nombrePart);//obtiene el valor de la clave asociada
+		for(String nombrePart:mapPartidos.keySet()){//guardas en nombrePart la clave
+			Integer numVotos=mapPartidos.get(nombrePart);//obtiene el valor de la clave asociada
 			for(int divisor=1;divisor<=5;divisor++){//recorro los escaños desde 1 hasta escaños hay
 				cociente=numVotos/divisor;//el numero de votos por partido dividido por el escaño
-				if (!partido2.containsKey(nombrePart)){//si partido2 no tiene esta clave
-					partido2.put(nombrePart, new ArrayList<Integer>());//le agrego el nombre del partido como clave y un array list de enteros como valor
+				if (!mapPartidoCocientes.containsKey(nombrePart)){//si partmapPartidoCocientes no tiene esta clave					
+					mapPartidoCocientes.put(nombrePart, new ArrayList<Integer>());//le agrego el nombre del partido como clave y un array list de enteros como valor
 				}//if
-				partido2.get(nombrePart).add(cociente);//obtengo el nombre del partido y le añado como clave el cociente
-				//System.out.println(nombrePart+" Escaños: "+divisor+" divisiones: "+partido2.get(nombrePart).toString());
+				mapPartidoCocientes.get(nombrePart).add(cociente);//obtengo el nombre del partido y le añado como clave el cociente
+				//System.out.println(nombrePart+" Escaños: "+divisor+" divisiones: "+partmapPartidoCocientes.get(nombrePart).toString());
 				//System.out.println();
 			}//for interno
-		}//for externo		
-		for(String partFinal:partido2.keySet()){
-			ArrayList<Integer> valorEscaño=partido2.get(partFinal);
-			System.out.println(partFinal+" "+valorEscaño);
+		}//for externo	
+
+		for(String partFinal:mapPartidoCocientes.keySet()){
+			ArrayList<Integer> listaCocientes=mapPartidoCocientes.get(partFinal);
+			System.out.println(partFinal+" "+listaCocientes);
 		}
+
 		System.out.println("\nLos 5 escaños mayores");
-		for(String nombre:partido2.keySet()){
-			ArrayList<Integer> escaño=partido2.get(nombre);
-			Iterator<Integer> itr=escaño.iterator();
-			for(int k=0;k<escaño.size();k++){
-				array[k]=itr.next();
-				System.out.print(array[k]+" ");
-				mayor=array[0];
+		
+		for (int i=0;i<mapPartidoCocientes.size();i++){
+			numMax=0;
+			nombreMax="";
+			for(String nombrePart:mapPartidoCocientes.keySet()){
+				if(mapPartidoCocientes.get(nombrePart).get(0)>numMax){
+					numMax=mapPartidoCocientes.get(nombrePart).get(0);
+					nombreMax=nombrePart;
+				}else{
+					mapPartidoCocientes.get(nombrePart).remove(0);
+				}//if 
+				
 			}
-			System.out.println("\n"+mayor);
-		}//for each
+			nombresOrdenado[i]=nombreMax;
+			
+		}
 	}//main
 
 }//class

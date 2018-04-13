@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+
 import java.util.*;
 public class Principal {
 
@@ -33,8 +33,8 @@ public class Principal {
 					partido2.put(nombrePart, new ArrayList<Integer>());//le agrego el nombre del partido como clave y un array list de enteros como valor
 				}//if
 				partido2.get(nombrePart).add(cociente);//obtengo el nombre del partido y le añado como clave el cociente
-				//System.out.println(nombrePart+" Escaños: "+divisor+" divisiones: "+partido2.get(nombrePart).toString());
-				//System.out.println();
+				System.out.println(nombrePart+" Escaños: "+divisor+" divisiones: "+partido2.get(nombrePart));
+				System.out.println();
 			}//for interno
 		}//for externo		
 		for(String partFinal:partido2.keySet()){

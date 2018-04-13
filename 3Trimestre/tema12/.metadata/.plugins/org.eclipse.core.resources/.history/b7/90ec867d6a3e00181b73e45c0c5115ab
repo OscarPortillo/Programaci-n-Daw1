@@ -1,0 +1,14 @@
+import java.util.TreeMap;
+
+public class Alumno {
+	private TreeMap<String,String> alumno;//=new TreeMap<String,String>();
+	private String usuario;
+	private String clave;
+	public Alumno(String usuario, String clave) {
+		this.usuario = usuario;
+		this.clave = clave;
+		alumno=new TreeMap<String,String>();
+		alumno.put(usuario, clave);
+	}
+	
+}//class

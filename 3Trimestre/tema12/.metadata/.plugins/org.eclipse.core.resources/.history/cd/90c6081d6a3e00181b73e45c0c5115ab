@@ -1,0 +1,6 @@
+
+public class Alumno {
+	private String usuario;
+	private String clave;
+	
+}

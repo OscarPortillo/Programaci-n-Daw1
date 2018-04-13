@@ -1,0 +1,26 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		/**
+		 * Deseamos realizar una aplicación para la gestión de usuarios y claves de acceso a un
+		 * sistema (red, base de datos, programa de gestión etc.)
+		 * Para ello vamos a utilizar mapas (TreeMap) donde el par de datos será:
+		 *  <usuario, clave de acceso>, los usuarios no pueden repetirse (TreeMap).
+		 *  Además para mayor seguridad las claves no se guardan tal y como la tecleamos
+		 *  sino que se guardan codificadas con un sencillo algoritmo que consiste en
+		 *  desplazar los caracteres un número fijo entero, p. ej. si la clave es ABC y el
+		 *  número fijo es 2 la clave será ABC pero en el mapa guardamos CDE, de forma
+		 *  que si nos pillan el fichero de claves, dicho fichero no sería el real sino el
+		 *  codificado.
+		 *   Las claves deben ser de tal forma que solo admitan mayúsculas, minúsculas y
+		 *  números y ningún otro carácter debe ser admitido.
+		 *  Crear la aplicación para que se pueda:
+		 *   Insertar usuario, clave
+		 *   Borrar usuarios
+		 *   Modificar claves de un usuario
+		 *   Validar a un usuario si su clave es correcta
+		 */
+	}//main
+
+}//class

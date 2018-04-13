@@ -1,0 +1,10 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		String nombres[]={"Oscar","Juan","Cristina","Raquel","Beatrice","Ioana","Nestor","Patricia","Arturo","María"};
+		String apellidos[]={"Portillo ","Jiménez","Fernandéz","Súarez","Carbonel","Peña","Blanco","Chavéz","Hernández","Mejía"};
+		Arraylist<Integer> alumnos=new Arraylist<Integer>();
+	}//main
+
+}//class

@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+public class Alumnos {
+	private ArrayList<Alumnos> alu;
+	private String nombre;
+	private String apellido;
+	private Integer nota1;
+	private Integer nota2;
+	private Integer nota3;
+	public Alumnos(String nombre, String apellido, Integer nota1, Integer nota2, Integer nota3) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.nota1 = nota1;
+		this.nota2 = nota2;
+		this.nota3 = nota3;
+	}
+	private void verDatosAlumno() {
+		for(Alumnos miAlu:alu){
+			System.out.println(miAlu.toString());
+		}
+
+	}
+	
+}//class

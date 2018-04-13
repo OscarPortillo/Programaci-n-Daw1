@@ -1,0 +1,6 @@
+import java.util.ArrayList;
+
+public class Alumnos {
+	private ArrayList<Integer> alu;
+
+}//class

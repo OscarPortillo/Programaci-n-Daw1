@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+
+public class Alumnos {
+	private ArrayList<Alumnos> alu;
+	private String nombre;
+	private String apellido;
+	private Integer nota1;
+	private Integer nota2;
+	private Integer nota3;
+
+	
+}//class

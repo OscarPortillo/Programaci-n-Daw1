@@ -1,0 +1,23 @@
+import java.util.TreeMap;
+
+public class Alumno {
+	private TreeMap<String,String> alumno;//=new TreeMap<String,String>();
+	private String usuario;
+	private String clave;
+	public Alumno(String usuario, String clave) {
+		this.usuario = usuario;
+		this.clave = clave;
+		alumno=new TreeMap<String,String>();
+		alumno.put(usuario, clave);
+	}
+	public void verAlumno() {
+		System.out.println(alumno.toString());
+	}
+	public void codificarClave(){
+	 char caracter;
+		for(int i=0;i<clave.length();i++){
+			caracter=clave.charAt(i);
+			System.out.print(caracter+2+" ");
+		}
+	}
+}//class

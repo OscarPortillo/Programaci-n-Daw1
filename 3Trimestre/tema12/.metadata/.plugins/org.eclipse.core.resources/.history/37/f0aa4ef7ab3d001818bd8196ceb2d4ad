@@ -1,0 +1,24 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		String nombres[]={"Oscar","Juan","Cristina","Raquel","Beatrice","Ioana","Nestor","Patricia","Arturo","María"};
+		String apellidos[]={"Portillo ","Jiménez","Fernandéz","Súarez","Carbonel","Peña","Blanco","Chavéz","Hernández","Mejía"};
+		Alumnos miAlu = null;//=new Alumnos(nombre, apellido, nota1, nota2, nota3)
+		Random azar=new Random();
+		Integer num,nota1,nota2,nota3,nomAzar,apeAzar;
+		num=azar.nextInt(nombres.length)+1;
+		for(Integer i=0;i<50;i++){
+			nomAzar=azar.nextInt(nombres.length);
+			apeAzar=azar.nextInt(apellidos.length);
+			nota1=azar.nextInt(100)+1;
+			nota2=azar.nextInt(100)+1;
+			nota3=azar.nextInt(100)+1;
+			miAlu= new Alumnos(nombres[nomAzar],apellidos[apeAzar],nota1,nota2,nota3);
+			
+		}
+		miAlu.verDatosAlumno();
+		
+	}//main
+
+}//class
