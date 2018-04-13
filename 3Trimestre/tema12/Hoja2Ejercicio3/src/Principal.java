@@ -9,9 +9,7 @@ public class Principal {
 				"Hernández", "Mejía" };
 		Alumnos miAlu = null;
 		Random azar = new Random();
-		@SuppressWarnings("unused")
-		Integer num, nota1, nota2, nota3, nomAzar, apeAzar;
-		num = azar.nextInt(nombres.length) + 1;
+		Integer nota1, nota2, nota3, nomAzar, apeAzar;
 		for (Integer i = 0; i < 50; i++) {
 			nomAzar = azar.nextInt(nombres.length);
 			apeAzar = azar.nextInt(apellidos.length);

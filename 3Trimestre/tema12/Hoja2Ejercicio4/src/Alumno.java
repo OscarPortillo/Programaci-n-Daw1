@@ -54,7 +54,7 @@ public class Alumno {
 		}
 		return vacio;
 	}
-	
+
 	public boolean validarClaveBorrar(String usu,String clave){
 		boolean correcto=false;
 		if(alu.get(usu).contains(codificarClave(clave))){
@@ -63,12 +63,12 @@ public class Alumno {
 		}
 		return correcto;
 	}
-		public boolean validarClavesCorrectas(String usu,String clave){
-			boolean correcto=false;
-			if(alu.get(usu).contains(codificarClave(clave))){
-				correcto=true;
-			}
-			return correcto;
+	public boolean validarClavesCorrectas(String usu,String clave){
+		boolean correcto=false;
+		if(alu.get(usu).contains(codificarClave(clave))){
+			correcto=true;
+		}
+		return correcto;
 	}//validarClaveBorrar
 	public boolean modificarclave(String usuario,String claveNueva){
 		boolean modificar=false;
