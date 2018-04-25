@@ -1,41 +1,40 @@
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Random;
+import java.util.TreeSet;
 public class Principal {
 
 	public static void main(String[] args) {
-		@SuppressWarnings("unused")
 		Random azar=new Random();
-		int num;
-		num=8;
-		HashSet<String> hash=new HashSet<String>();
+		String vec[]={"este"," montaña "," letra"," bajo ","frio ","bajo "," bajo "," aleatorio "};
+		HashSet<String> hs=new HashSet<String>();
 		LinkedHashSet<String> lhs=new LinkedHashSet<String>();
 		TreeSet<String> ts=new TreeSet<String>();
-		String valor[]={"este "," montaña "," letra"," bajo "," frio "," bajo "," bajo "," aleatorio "};
-		@SuppressWarnings("unused")
-		String aux;
-		System.out.println("se van a generar "+num+" datos");
-		for(int i=0;i<num;i++){
-			System.out.print(valor[i]+" * ");
-			hash.add(valor[i]);
-			lhs.add(valor[i]);
-			ts.add(valor[i]);
+		int num,num2;
+		num=azar.nextInt(15)+1;
+		System.out.println("Se van a generar 8 datos.");
+		System.out.println("Insertando");
+		for(int i=0;i<8;i++){			
+			System.out.print(vec[i]+" * ");
+			hs.add(vec[i]);
+			lhs.add(vec[i]);
+			ts.add(vec[i]);			
 		}
-		System.out.println("\n\nValores de objHashSet (no hay orden):");
-		for(String StringHS:hash){
-			System.out.print(StringHS+" ");
+		System.out.println("\n\nValores de objHashSet");
+		for(String obHS:hs){
+			System.out.print(obHS+" ");
 		}
-		System.out.println("\n\nValores de objLinkHashSet (por orden de inserción):");
-		for(String valorLHS:lhs){
-			System.out.print(valorLHS+" ");
+		System.out.println("\n\nValores de objLinkedHashSet");
+		for(String ldhs:lhs){
+			System.out.print(ldhs+" ");
 		}
-		System.out.println("\n\nValores de objTreeSet (orden alfabético):");
-		for(String valorTS:ts){
-			System.out.print(valorTS+" ");
+		System.out.println("\n\nValores de objTreeSet");
+		for(String  obTS:ts){
+			System.out.print(obTS+" ");
 		}
-		System.out.println("\n");
-		System.out.println("Valores de objHashSet: "+hash.toString());
-		System.out.println("Valores de objLinkHashSet: "+lhs);
-		System.out.println("Valores de objTreeSet: "+ts);
-		
-	}
+		System.out.println("\n\nValores de objHashSet: "+hs.toString());
+		System.out.println("Valores de objLinkedHashSet: "+lhs.toString());
+		System.out.println("Valores de objTreeSet: "+ts.toString());
+	}//main
 
-}
+}//class

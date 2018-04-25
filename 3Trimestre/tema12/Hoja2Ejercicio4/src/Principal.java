@@ -24,13 +24,13 @@ public class Principal {
 					}
 					alu.verAlumno();
 				}
-				break;//case 2
+				break;
 
 			case 2:
 				String borrar,contraseña;
 				if(alu.vacio()==false){
 					borrar=Leer.pedirCadena("Que usuario quiere borrar");
-					if(alu.existeUsuario(borrar)==true){
+					if(alu.borrarUsuario(borrar)==true){
 						contraseña=Leer.pedirCadena("Introduzca la contraseña de "+borrar);
 						if(alu.validarClaveBorrar(borrar, contraseña)==true){
 							System.out.println("Usuario borrado correctamente");
@@ -43,7 +43,7 @@ public class Principal {
 				}else{
 					System.out.println("No hay usuarios");
 				}
-				break;//case 2
+				break;
 
 			case 3:
 				String modificarUsuario,claveVieja,claveNueva;
@@ -64,27 +64,27 @@ public class Principal {
 				}else{
 					System.out.println("No hay usuarios");
 				}
-				break;//case 3
+
+				break;
 			case 4:
 				String validarUsuario,validarContraseña;
 				if(alu.vacio()==false){
 					validarUsuario=Leer.pedirCadena("Que usuario desea validar?");
-
 					if(alu.existeUsuario(validarUsuario)==true){
 						validarContraseña=Leer.pedirCadena("Introduce la contraseña");
 						if(alu.validarClavesCorrectas(validarUsuario, validarContraseña)==true){
-							
+
 							System.out.println("usuario "+validarUsuario+" validado la contraseña es correcta");
 						}else{
 							System.out.println("La contraseña es incorrecta");
-						}
+						}//si la clave es correcta
 					}else{
 						System.out.println("El usuario no existe");
-					}
+					}//if si existe el usuario
 				}else{
 					System.out.println("No hay usuarios");
-				}
-				break;//case 4
+				}//if si el mapa esta vacio
+				break;
 			}
 		}while(opc!=0);
 	}//main
